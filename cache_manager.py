@@ -91,7 +91,7 @@ class CacheManager:
     def load_all_analysis_results(self, session_id: str) -> Dict[int, Any]:
         """해당 세션의 모든 분석 결과 파트를 불러옵니다."""
         all_results = {}
-        for part_num in range(1, 9): # Part 1부터 8까지
+        for part_num in range(1, 8): # Part 1부터 7까지
             analysis_data = self.load_analysis(session_id, part_num)
             if analysis_data:
                 all_results[part_num] = analysis_data
@@ -119,8 +119,8 @@ class CacheManager:
             if not os.path.exists(file_path):
                 return False
             
-            # 2. 모든 파트(1-8) 존재 여부 확인
-            for part_num in range(1, 9):
+            # 2. 모든 파트(1-7) 존재 여부 확인
+            for part_num in range(1, 8):
                 part_file = os.path.join(self.cache_dir, f"{session_id}_part_{part_num}.json")
                 if not os.path.exists(part_file):
                     print(f"[CACHE] 분석 완료로 표시되어 있지만 Part {part_num}이 없음: {session_id}")
@@ -136,7 +136,7 @@ class CacheManager:
     def get_completed_parts(self, session_id: str) -> list[int]:
         """완료된 파트 목록을 반환"""
         completed_parts = []
-        for part_num in range(1, 9):
+        for part_num in range(1, 8):
             if self.load_analysis(session_id, part_num) is not None:
                 completed_parts.append(part_num)
         return completed_parts

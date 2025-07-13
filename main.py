@@ -91,117 +91,76 @@ def create_saju_result(birth_date_str: str, birth_time_str: str) -> dict:
 def convert_analysis_results_for_template(all_results: dict, analyzer) -> list:
     """
     AI 분석 결과를 템플릿에 맞는 구조로 변환
-    
-    Args:
-        all_results: {part_number: json_result} 딕셔너리
-        analyzer: AISajuAnalyzer 인스턴스
-        
-    Returns:
-        템플릿에 맞는 구조의 분석 결과 리스트
     """
     analysis_parts = []
     
-    for part_num in range(1, 9):
+    for part_num in range(1, 8):
         if part_num not in all_results:
             continue
-            
         json_result = all_results[part_num]
         part_info = analyzer.analysis_parts[part_num]
-        
-        # 파트 구조 생성
         part_data = {
             'title': part_info['title'],
             'sections': []
         }
-        
-        # 🔧 JSON 결과에서 분석 데이터 추출 (이중 래핑 처리)
+        # 🔧 실패한 파트 처리 개선 (dict가 아니거나 error 키가 있으면 fallback)
         analysis_data = json_result.get('analysis', json_result)
-        
-        # 이중 래핑 처리: analysis.analysis 구조 확인
-        if isinstance(analysis_data, dict) and 'analysis' in analysis_data:
-            analysis_data = analysis_data['analysis']
-        
-        # 🔧 실패한 파트 처리 개선 (파트 레벨에서 처리)
-        if 'error' in analysis_data:
-            # 실패한 파트에 대한 친화적인 메시지 제공
-            fallback_message = analysis_data.get('fallback_message', 
-                                              "이 부분의 분석은 일시적으로 사용할 수 없습니다. 나중에 다시 시도해주세요.")
-            
+        if not isinstance(analysis_data, dict):
+            fallback_message = str(analysis_data)
             section_data = {
                 'title': '🔧 분석 준비 중',
-                'content': [{'text': f"""
-                <div class="error-section">
-                    <h4>⚠️ 일시적 오류</h4>
-                    <p>{fallback_message}</p>
-                    <p class="error-note">
-                        💡 <strong>참고:</strong> 다른 파트의 분석 결과를 통해서도 
-                        많은 인사이트를 얻으실 수 있습니다.
-                    </p>
-                </div>
-                """}]
+                'content': [{'text': f"<div class=\"error-section\"><h4>⚠️ 일시적 오류</h4><p>{fallback_message}</p><p class=\"error-note\">💡 <strong>참고:</strong> 다른 파트의 분석 결과를 통해서도 많은 인사이트를 얻으실 수 있습니다.</p></div>"}]
             }
             part_data['sections'].append(section_data)
             analysis_parts.append(part_data)
             continue
-        
+        if 'error' in analysis_data:
+            fallback_message = analysis_data.get('fallback_message', "이 부분의 분석은 일시적으로 사용할 수 없습니다. 나중에 다시 시도해주세요.")
+            section_data = {
+                'title': '🔧 분석 준비 중',
+                'content': [{'text': f"<div class=\"error-section\"><h4>⚠️ 일시적 오류</h4><p>{fallback_message}</p><p class=\"error-note\">💡 <strong>참고:</strong> 다른 파트의 분석 결과를 통해서도 많은 인사이트를 얻으실 수 있습니다.</p></div>"}]
+            }
+            part_data['sections'].append(section_data)
+            analysis_parts.append(part_data)
+            continue
         section_infos = part_info['sections']
-        
-        for i, (section_key, section_title, min_chars) in enumerate(section_infos):
-            # JSON에서 해당 섹션 내용 찾기
+        for i, (section_key, section_title, min_chars, options) in enumerate(section_infos):
             content_text = ""
             section_number_key = f"section_{i+1}"
-            
-            # 🔧 JSON 파싱 개선 - 직접 JSON 문자열 처리
             if isinstance(analysis_data, str):
                 try:
-                    # JSON 문자열을 파싱
                     parsed_data = json.loads(analysis_data)
                     if section_number_key in parsed_data:
                         content_text = parsed_data[section_number_key]
                     elif section_key in parsed_data:
                         content_text = parsed_data[section_key]
                     elif len(parsed_data) > i:
-                        # 순서대로 가져오기
                         values = list(parsed_data.values())
                         if i < len(values):
                             content_text = values[i]
                     else:
-                        # 첫 번째 값 사용
                         content_text = list(parsed_data.values())[0] if parsed_data else ""
-                    print(f"[JSON 문자열 파싱 성공] Part {part_num}, Section {i+1}: {len(content_text)} 문자")
                 except json.JSONDecodeError as e:
-                    print(f"[JSON 문자열 파싱 오류] Part {part_num}, Section {i+1}: {e}")
-                    content_text = analysis_data  # 원본 문자열 사용
+                    content_text = analysis_data
             else:
-                # 기존 딕셔너리 처리
                 if section_number_key in analysis_data:
                     content_text = analysis_data[section_number_key]
                 elif section_key in analysis_data:
                     content_text = analysis_data[section_key]
                 elif len(analysis_data) > i:
-                    # 순서대로 가져오기
                     keys = list(analysis_data.keys())
                     if i < len(keys):
                         content_text = analysis_data[keys[i]]
-            
-            # 🔧 마크다운 코드 블록 처리 개선
             if content_text and isinstance(content_text, str):
                 original_content = content_text
-                
-                # 마크다운 코드 블록 감지 및 제거
                 if content_text.strip().startswith('```json'):
                     try:
-                        # ```json 과 ``` 제거
                         json_content = content_text.strip()
                         if json_content.startswith('```json'):
-                            json_content = json_content[7:]  # ```json 제거
+                            json_content = json_content[7:]
                         if json_content.endswith('```'):
-                            json_content = json_content[:-3]  # ``` 제거
-                        
-                        # JSON 파싱
+                            json_content = json_content[:-3]
                         parsed_json = json.loads(json_content.strip())
-                        
-                        # 내부에서 실제 내용 찾기
                         if section_number_key in parsed_json:
                             content_text = parsed_json[section_number_key]
                         elif f'section_{i+1}' in parsed_json:
@@ -211,53 +170,30 @@ def convert_analysis_results_for_template(all_results: dict, analyzer) -> list:
                         elif 'section_2' in parsed_json and i == 1:
                             content_text = parsed_json['section_2']
                         elif len(parsed_json) > i:
-                            # 순서대로 가져오기
                             values = list(parsed_json.values())
                             if i < len(values):
                                 content_text = values[i]
                         else:
-                            # 첫 번째 값 사용
                             content_text = list(parsed_json.values())[0] if parsed_json else ""
-                        
-                        print(f"[JSON 파싱 성공] Part {part_num}, Section {i+1}: {len(content_text)} 문자")
-                                
                     except (json.JSONDecodeError, IndexError, KeyError) as e:
-                        print(f"[JSON 파싱 오류] Part {part_num}, Section {i+1}: {e}")
-                        # 파싱 실패 시 원본 텍스트 사용 (마크다운 블록 제거)
                         content_text = original_content.replace('```json', '').replace('```', '').strip()
-                        print(f"[폴백 사용] Part {part_num}, Section {i+1}: {len(content_text)} 문자")
-                
-                # 빈 내용 체크
                 if not content_text or content_text.strip() == "":
                     content_text = "내용을 불러올 수 없습니다."
-                    print(f"[빈 내용 감지] Part {part_num}, Section {i+1}: 기본 메시지 사용")
-                else:
-                    print(f"[내용 확인] Part {part_num}, Section {i+1}: {content_text[:100]}...")
             else:
                 content_text = "내용을 불러올 수 없습니다."
-                print(f"[내용 없음] Part {part_num}, Section {i+1}: 기본 메시지 사용")
-            
-            # 마크다운 **강조**를 HTML <strong> 태그로 변환
             if content_text and isinstance(content_text, str):
                 content_text = analyzer.convert_markdown_bold_to_html(content_text)
-            
-            # 섹션 데이터 생성
             section_data = {
                 'title': section_title,
                 'content': [{'text': content_text}]
             }
-            
             part_data['sections'].append(section_data)
-        
-        # 파트에 섹션이 없는 경우 기본 메시지 추가
         if not part_data['sections']:
             part_data['sections'].append({
                 'title': '🔄 분석 중',
                 'content': [{'text': '이 파트의 분석이 진행 중입니다. 잠시 후 다시 확인해주세요.'}]
             })
-        
         analysis_parts.append(part_data)
-    
     return analysis_parts
 
 def parse_saju_result(saju_result: dict) -> dict:
@@ -317,7 +253,7 @@ def handle_integrated_analysis(saju_result: dict, user_info: dict, user_hash: st
     analyzer = AISajuAnalyzer()
 
     # 모든 파트 분석 수행
-    print("[INTEGRATED] 통합 분석 시작 (Part 1-8, 대화형)...")
+    print("[INTEGRATED] 통합 분석 시작 (Part 1-7, 대화형)...")
     def on_part_complete(part_num, result):
         print(f"[INTEGRATED] Part {part_num} 완료")
         # 결과를 캐시에 저장
@@ -459,59 +395,45 @@ def start_background_analysis():
         logger.error(f"백그라운드 분석 중 오류 발생: {e}", exc_info=True)
         return {"error": f"분석 중 오류가 발생했습니다: {str(e)}"}, 500
 
+# 분석 결과 페이지에서 예외 메시지는 항상 str(e)로 변환해서 로깅 및 안내
 @app.route('/analysis-result')
 def analysis_result():
-    """캐시된 분석 결과를 보여주는 페이지 (새로고침 가능)"""
     try:
-        # 세션 정보 디버깅
         current_session_id = session.get('session_id')
         logger.info(f"🔍 [결과 페이지 접근] 세션 ID: {current_session_id}")
-        
         session_id, saju_result, user_info = validate_session()
-        
         logger.info(f"🔍 [세션 검증 결과] session_id: {session_id is not None}, saju_result: {saju_result is not None}, user_info: {user_info is not None}")
-
         if not all([session_id, saju_result, user_info]):
             logger.warning(f"❌ [세션 오류] 세션 정보 없이 결과 페이지에 접근 시도")
-            
-            # 세션 복구 시도: 최근 완료된 분석을 찾기
             logger.info("🔄 [세션 복구] 최근 완료된 분석 찾는 중...")
             recovered_session = cache_manager.find_recent_completed_analysis()
-            
             if recovered_session:
                 session_id, saju_result, user_info = recovered_session
-                session['session_id'] = session_id  # 세션 복구
+                session['session_id'] = session_id
                 logger.info(f"✅ [세션 복구 성공] 세션 ID: {session_id}")
             else:
                 logger.warning("❌ [세션 복구 실패] 복구 가능한 분석을 찾을 수 없습니다")
                 return redirect(url_for('home'))
-
-        # 모든 파트 분석 결과 수집 (일부 파트 누락 허용)
         all_results = {}
         missing_parts = []
-        
-        for part_num in range(1, 9):
+        for part_num in range(1, 8):
             analysis_data = cache_manager.load_analysis(session_id, part_num)
             if analysis_data:
                 all_results[part_num] = analysis_data
             else:
                 missing_parts.append(part_num)
                 logger.warning(f"⚠️ [부분 결과] Part {part_num} 분석 결과 없음. Session ID: {session_id}")
-        
-        # 사용 가능한 파트가 있으면 결과 표시
         if all_results:
             logger.info(f"📊 [부분 결과 표시] 사용 가능한 파트: {list(all_results.keys())}, 누락된 파트: {missing_parts}")
-            
-            analyzer = AISajuAnalyzer() # 템플릿 변환에 필요
+            analyzer = AISajuAnalyzer()
             analysis_parts = convert_analysis_results_for_template(all_results, analyzer)
             parsed_saju_result = parse_saju_result(saju_result)
-
             return render_template('integrated_analysis.html',
                                  subtitle="사주 종합 분석 결과 (일부)",
                                  user_info=user_info,
                                  saju_result=parsed_saju_result,
                                  analysis_parts=analysis_parts,
-                                 missing_parts=missing_parts)  # 누락된 파트 정보 전달
+                                 missing_parts=missing_parts)
         else:
             logger.error(f"❌ [결과 없음] 표시할 분석 결과가 없습니다. Session ID: {session_id}")
             return redirect(url_for('home'))
@@ -531,7 +453,7 @@ def analysis_progress():
         logger.info(f"✅ [분석 완료] 세션 {session_id} 분석이 완료되었습니다")
         return {
             "status": "completed",
-            "last_completed_part": 8,
+            "last_completed_part": 7,
             "message": "분석이 완료되었습니다"
         }
     
@@ -539,7 +461,7 @@ def analysis_progress():
     completed_parts = cache_manager.get_completed_parts(session_id)
     last_completed_part = len(completed_parts)
     
-    logger.info(f"🔍 [진행 상태] 세션 {session_id} - 완료된 파트: {completed_parts} ({last_completed_part}/8)")
+    logger.info(f"🔍 [진행 상태] 세션 {session_id} - 완료된 파트: {completed_parts} ({last_completed_part}/7)")
     
     # 🔧 3. 일정 시간 후 분석이 진행되지 않으면 타임아웃 처리
     # 실제 프로덕션에서는 분석 시작 시간을 추적해야 함
@@ -547,7 +469,7 @@ def analysis_progress():
         "status": "in_progress",
         "last_completed_part": last_completed_part,
         "completed_parts": completed_parts,
-        "message": f"분석 진행 중... ({last_completed_part}/8 완료)"
+        "message": f"분석 진행 중... ({last_completed_part}/7 완료)"
     }
 
 @app.route('/download-html')
@@ -560,7 +482,7 @@ def download_html():
 
         # 캐시에서 모든 분석 결과 로드
         all_results = cache_manager.load_all_analysis_results(session_id)
-        if not all_results or len(all_results) < 8:
+        if not all_results or len(all_results) < 7:
              return "아직 분석이 완료되지 않았습니다.", 404
 
         # 분석 결과를 템플릿용으로 변환
@@ -642,7 +564,7 @@ def start_ai_analysis():
 
         # 사주 분석기 초기화
         ai_analyzer = AISajuAnalyzer()
-        app.logger.info(f"🚀 [사주 분석] 대화형 분석 시작 (Part 1-8): {session_id}")
+        app.logger.info(f"🚀 [사주 분석] 대화형 분석 시작 (Part 1-7): {session_id}")
         
         # 백그라운드 스레드로 분석 시작
         thread = threading.Thread(target=analyze_in_background_conversation, args=(session_id, user_data, ai_analyzer, True))
@@ -669,13 +591,13 @@ def analyze_in_background_conversation(session_id: str, user_data: tuple, ai_ana
         def on_part_complete(part_num, result):
             cache_manager.save_analysis(session_id, part_num, result)
             app.logger.info(f"🔮 [사주 분석] Part {part_num} 완료 및 저장")
-        app.logger.info(f"🚀 [대화형 분석] 시작 - Part 1-8 모두 대화 방식")
+        app.logger.info(f"🚀 [대화형 분석] 시작 - Part 1-7 모두 대화 방식")
         all_results = ai_analyzer.analyze_all_parts(saju_result, user_info, on_part_complete, session_id)
         # 분석 완료 상태 설정
         cache_manager.set_analysis_complete(session_id)
         # 성공률 계산
         success_count = sum(1 for result in all_results.values() if 'error' not in str(result))
-        success_rate = (success_count / 8) * 100
+        success_rate = (success_count / 7) * 100
         app.logger.info(f"🎯 [사주 분석] 완료 - 성공률: {success_rate:.1f}%")
     except Exception as e:
         app.logger.error(f"백그라운드 사주 분석 실패: {e}")

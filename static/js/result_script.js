@@ -76,10 +76,10 @@ function startProgressCheck() {
                     throw new Error(data.error);
                 }
                 
-                // 프로그레스 바 업데이트 (8개 파트 기준)
+                // 프로그레스 바 업데이트 (7개 파트 기준)
                 const progressBar = document.querySelector('.progress-fill');
                 if (progressBar) {
-                    const progress = (data.last_completed_part / 8) * 100;
+                    const progress = (data.last_completed_part / 7) * 100;
                     progressBar.style.width = `${progress}%`;
                 }
 
@@ -96,8 +96,8 @@ function startProgressCheck() {
                     }
                 });
 
-                // 완료 시 (status가 "completed"이거나 8개 파트 모두 완료)
-                if (data.status === "completed" || data.last_completed_part >= 8) {
+                // 완료 시 (status가 "completed"이거나 7개 파트 모두 완료)
+                if (data.status === "completed" || data.last_completed_part >= 7) {
                     clearInterval(interval);
                     resetAnalysisState();
                     // 잠시 후 결과 페이지로 리디렉션
