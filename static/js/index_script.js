@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     loadingOverlay.classList.add('show');
                     loadingOverlay.style.display = 'flex';
                     if (loadingMessage) {
-                        loadingMessage.textContent = '당신의 우주를 분석하고 있어요...';
+                        loadingMessage.textContent = '당신의 사주를 분석하고 있어요...';
                     }
                 }
 
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (testAd.parentNode) {
                 document.body.removeChild(testAd);
             }
-        }, 1500); // 1.5초 후 확인
+        }, 500); // 1.5초 후 확인
     };
 
     window.showAdBlockModal = function() {
@@ -294,5 +294,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 완료 후 광고차단기 감지 실행
     setTimeout(() => {
         detectAdBlocker();
-    }, 3000); // 3초 후 실행 (광고 스크립트 로딩 시간 확보)
+    }, 500); // 3초 후 실행 (광고 스크립트 로딩 시간 확보)
 }); 
