@@ -128,7 +128,7 @@
                 if (!hasAd || (typeof PartnersCoupang === 'undefined')) {
                     showAdBlockModal();
                 }
-            }, 3000); // 3초 후 확인
+            }, 1000); // 3초 후 확인
         }
 
         function showAdBlockModal() {
@@ -154,14 +154,6 @@
         function reloadPage() {
             sessionStorage.removeItem('adblock-modal-shown');
             window.location.reload();
-        }
-
-        // 모달 외부 클릭 시 닫기
-        window.onclick = function(event) {
-            const modal = document.getElementById('adblock-modal');
-            if (event.target === modal) {
-                closeAdBlockModal();
-            }
         }
 
         // 페이지 로드 완료 후 광고차단기 감지 실행
