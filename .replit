@@ -1,4 +1,1 @@
-
-run = "python main.py"
-python --version
-pip install -r requirements.txt
+run = "python3 main.py"
