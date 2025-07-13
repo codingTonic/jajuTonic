@@ -190,21 +190,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 광고차단기 감지 기능
     window.detectAdBlocker = function() {
-        // 테스트용 광고 요소 생성
+        // 방법 1: 쿠팡 스크립트 로드 확인
+        const testCoupangScript = document.getElementById('test-coupang-script');
+        const testAdContainer = document.getElementById('test-ad-container');
+        
+        // 방법 2: 일반적인 광고 요소 테스트
         const testAd = document.createElement('div');
         testAd.innerHTML = '&nbsp;';
-        testAd.className = 'adsbox';
+        testAd.className = 'adsbox advertisement ads ad-banner';
         testAd.style.position = 'absolute';
         testAd.style.left = '-10000px';
+        testAd.style.width = '1px';
+        testAd.style.height = '1px';
         document.body.appendChild(testAd);
         
         setTimeout(() => {
-            // 광고차단기가 요소를 차단했는지 확인
+            let adBlockDetected = false;
+            
+            // 쿠팡 스크립트가 로드되지 않았거나 PartnersCoupang이 정의되지 않은 경우
+            if (typeof PartnersCoupang === 'undefined') {
+                console.log('쿠팡 파트너스 스크립트가 차단됨');
+                adBlockDetected = true;
+            }
+            
+            // 테스트 광고 요소가 차단된 경우
             if (testAd.offsetHeight === 0 || testAd.style.display === 'none' || testAd.style.visibility === 'hidden') {
+                console.log('테스트 광고 요소가 차단됨');
+                adBlockDetected = true;
+            }
+            
+            // 광고 컨테이너의 내용이 비어있는 경우
+            if (testAdContainer && testAdContainer.children.length <= 2) { // script 태그 2개만 있는 경우
+                console.log('쿠팡 광고 컨테이너가 비어있음');
+                adBlockDetected = true;
+            }
+            
+            if (adBlockDetected) {
                 showAdBlockModal();
             }
-            document.body.removeChild(testAd);
-        }, 100);
+            
+            // 테스트 요소 정리
+            if (testAd.parentNode) {
+                document.body.removeChild(testAd);
+            }
+        }, 1500); // 1.5초 후 확인
     };
 
     window.showAdBlockModal = function() {
@@ -265,5 +294,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 완료 후 광고차단기 감지 실행
     setTimeout(() => {
         detectAdBlocker();
-    }, 2000); // 2초 후 실행
+    }, 3000); // 3초 후 실행 (광고 스크립트 로딩 시간 확보)
 }); 

@@ -11,6 +11,18 @@
         <h1>운세 제미니 - 너의 사주 이야기</h1>
         <p>사주팔자를 기반으로 당신의 모든 것을 알려줄게!</p>
         
+        <!-- 광고차단기 감지를 위한 숨겨진 쿠팡 광고 -->
+        <div id="test-ad-container" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;">
+            <script src="https://ads-partners.coupang.com/g.js" id="test-coupang-script"></script>
+            <script>
+                try {
+                    new PartnersCoupang.G({"id":648436,"trackingCode":"AF9065033","subId":"test","template":"carousel","width":"320","height":"100"});
+                } catch (e) {
+                    console.log('테스트 광고 로드 실패:', e);
+                }
+            </script>
+        </div>
+        
         <form id="sajuForm" action="/calculate" method="post">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <div class="form-group">
