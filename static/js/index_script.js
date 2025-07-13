@@ -181,4 +181,90 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('요청 중 오류가 발생했습니다.');
         });
     }
+
+    // 광고차단기 감지 기능
+    window.detectAdBlocker = function() {
+        // 테스트용 광고 요소 생성
+        const testAd = document.createElement('div');
+        testAd.innerHTML = '&nbsp;';
+        testAd.className = 'adsbox';
+        testAd.style.position = 'absolute';
+        testAd.style.left = '-10000px';
+        document.body.appendChild(testAd);
+        
+        setTimeout(() => {
+            // 광고차단기가 요소를 차단했는지 확인
+            if (testAd.offsetHeight === 0 || testAd.style.display === 'none' || testAd.style.visibility === 'hidden') {
+                showAdBlockModal();
+            }
+            document.body.removeChild(testAd);
+        }, 100);
+    };
+
+    window.showAdBlockModal = function() {
+        // 이미 모달이 표시되었는지 확인 (중복 방지)
+        if (sessionStorage.getItem('adblock-modal-shown')) {
+            return;
+        }
+        
+        // 모달 HTML이 없으면 동적으로 생성
+        if (!document.getElementById('adblock-modal')) {
+            const modalHTML = `
+                <div id="adblock-modal" class="adblock-modal">
+                    <div class="adblock-modal-content">
+                        <span class="close-modal" onclick="closeAdBlockModal()">&times;</span>
+                        <h3>🛡️ 광고차단기가 감지되었습니다</h3>
+                        <p>
+                            광고차단기로 인해 일부 기능이 제한될 수 있습니다.<br>
+                            저희 서비스는 광고 수익으로 운영되고 있어요.
+                        </p>
+                        <p>
+                            광고를 허용해주시면 더 나은 서비스를 제공할 수 있습니다.<br>
+                            <strong>광고차단기를 잠시 해제하거나 이 사이트를 예외로 추가해주세요.</strong>
+                        </p>
+                        <div class="adblock-modal-buttons">
+                            <button class="adblock-modal-btn primary" onclick="reloadPage()">
+                                새로고침하기
+                            </button>
+                            <button class="adblock-modal-btn secondary" onclick="closeAdBlockModal()">
+                                그냥 계속하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        const modal = document.getElementById('adblock-modal');
+        if (modal) {
+            modal.style.display = 'block';
+            sessionStorage.setItem('adblock-modal-shown', 'true');
+        }
+    };
+
+    window.closeAdBlockModal = function() {
+        const modal = document.getElementById('adblock-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    window.reloadPage = function() {
+        sessionStorage.removeItem('adblock-modal-shown');
+        window.location.reload();
+    };
+
+    // 모달 외부 클릭 시 닫기
+    document.addEventListener('click', function(event) {
+        const modal = document.getElementById('adblock-modal');
+        if (event.target === modal) {
+            closeAdBlockModal();
+        }
+    });
+
+    // 페이지 로드 완료 후 광고차단기 감지 실행
+    setTimeout(() => {
+        detectAdBlocker();
+    }, 2000); // 2초 후 실행
 }); 

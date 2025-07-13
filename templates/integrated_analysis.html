@@ -77,13 +77,100 @@
         <!-- 쿠팡 파트너스 광고 -->
         <div class="ad-section">
             <h3>쿠팡에서 아무거나 구매하기</h3>
-            <div class="ad-container">
-                <script src="https://ads-partners.coupang.com/g.js"></script>
+            <div class="ad-container" id="ad-container">
+                <script src="https://ads-partners.coupang.com/g.js" id="coupang-script"></script>
                 <script>
-                    new PartnersCoupang.G({"id":648436,"trackingCode":"AF9065033","subId":null,"template":"carousel","width":"320","height":"140"});
+                    try {
+                        new PartnersCoupang.G({"id":648436,"trackingCode":"AF9065033","subId":null,"template":"carousel","width":"320","height":"140"});
+                    } catch (e) {
+                        console.log('광고 로드 실패:', e);
+                    }
                 </script>
             </div>
         </div>
     </div>
+
+    <!-- 광고차단기 감지 모달 -->
+    <div id="adblock-modal" class="adblock-modal">
+        <div class="adblock-modal-content">
+            <span class="close-modal" onclick="closeAdBlockModal()">&times;</span>
+            <h3>🛡️ 광고차단기가 감지되었습니다</h3>
+            <p>
+                광고차단기로 인해 쿠팡 파트너스 광고가 차단되었습니다.<br>
+                저희 서비스는 광고 수익으로 운영되고 있어요.
+            </p>
+            <p>
+                광고를 허용해주시면 더 나은 서비스를 제공할 수 있습니다.<br>
+                <strong>광고차단기를 잠시 해제하거나 이 사이트를 예외로 추가해주세요.</strong>
+            </p>
+            <div class="adblock-modal-buttons">
+                <button class="adblock-modal-btn primary" onclick="reloadPage()">
+                    새로고침하기
+                </button>
+                <button class="adblock-modal-btn secondary" onclick="closeAdBlockModal()">
+                    그냥 계속하기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 광고차단기 감지 스크립트
+        function detectAdBlocker() {
+            // 쿠팡 스크립트가 로드되었는지 확인
+            const coupangScript = document.getElementById('coupang-script');
+            const adContainer = document.getElementById('ad-container');
+            
+            setTimeout(() => {
+                // 광고 컨테이너의 내용이 비어있거나 스크립트가 차단된 경우
+                const hasAd = adContainer.querySelector('iframe') || 
+                             adContainer.querySelector('.coupang-widget') ||
+                             adContainer.children.length > 2; // script 태그 2개 외에 다른 요소가 있는지
+                
+                // 쿠팡 스크립트가 로드되지 않았거나 광고가 표시되지 않은 경우
+                if (!hasAd || (typeof PartnersCoupang === 'undefined')) {
+                    showAdBlockModal();
+                }
+            }, 3000); // 3초 후 확인
+        }
+
+        function showAdBlockModal() {
+            // 이미 모달이 표시되었는지 확인 (중복 방지)
+            if (sessionStorage.getItem('adblock-modal-shown')) {
+                return;
+            }
+            
+            const modal = document.getElementById('adblock-modal');
+            if (modal) {
+                modal.style.display = 'block';
+                sessionStorage.setItem('adblock-modal-shown', 'true');
+            }
+        }
+
+        function closeAdBlockModal() {
+            const modal = document.getElementById('adblock-modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function reloadPage() {
+            sessionStorage.removeItem('adblock-modal-shown');
+            window.location.reload();
+        }
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('adblock-modal');
+            if (event.target === modal) {
+                closeAdBlockModal();
+            }
+        }
+
+        // 페이지 로드 완료 후 광고차단기 감지 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            detectAdBlocker();
+        });
+    </script>
 </body>
 </html> 
