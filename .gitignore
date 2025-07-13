@@ -9,6 +9,7 @@ logs/
 
 # Local Environment Variables
 .env
+.env.bak
 
 # OS-specific
 .DS_Store
