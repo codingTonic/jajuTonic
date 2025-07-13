@@ -199,6 +199,30 @@ hr {
     margin-bottom: 0;
 }
 
+/* 광고 섹션 스타일 */
+.ad-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ad-section h3 {
+    color: #5A4B7C;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #C8A8D8;
+    padding-bottom: 8px;
+}
+
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+}
+
 .section-content h3 {
     margin-bottom: 12px;
 }
