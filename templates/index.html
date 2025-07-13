@@ -101,22 +101,19 @@
     <!-- 광고차단기 감지 모달 -->
     <div id="adblock-modal" class="adblock-modal">
         <div class="adblock-modal-content">
-            <span class="close-modal" onclick="closeAdBlockModal()">&times;</span>
-            <h3>🛡️ 광고차단기가 감지되었습니다</h3>
+            <h3>🚫 광고차단기 해제 필수</h3>
             <p>
-                광고차단기로 인해 일부 기능이 제한될 수 있습니다.<br>
+                <strong>광고차단기가 감지되어 서비스 이용이 제한됩니다.</strong><br>
                 저희 서비스는 광고 수익으로 운영되고 있어요.
             </p>
             <p>
-                광고를 허용해주시면 더 나은 서비스를 제공할 수 있습니다.<br>
-                <strong>광고차단기를 잠시 해제하거나 이 사이트를 예외로 추가해주세요.</strong>
+                서비스 이용을 위해서는 반드시:<br>
+                <strong>1. 광고차단기를 해제하거나</strong><br>
+                <strong>2. 이 사이트를 광고차단기 예외 목록에 추가해주세요</strong>
             </p>
             <div class="adblock-modal-buttons">
                 <button class="adblock-modal-btn primary" onclick="reloadPage()">
-                    새로고침하기
-                </button>
-                <button class="adblock-modal-btn secondary" onclick="closeAdBlockModal()">
-                    그냥 계속하기
+                    광고차단기 해제 후 새로고침
                 </button>
             </div>
         </div>

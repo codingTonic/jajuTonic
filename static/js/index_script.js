@@ -116,6 +116,12 @@ document.addEventListener('DOMContentLoaded', function() {
         sajuForm.addEventListener('submit', function(event) {
             event.preventDefault(); // 기본 제출 동작 막기
 
+            // 광고차단기가 감지된 상태에서는 폼 제출 차단
+            if (sessionStorage.getItem('adblock-modal-shown') && document.getElementById('adblock-modal').style.display === 'block') {
+                alert('광고차단기를 해제한 후 이용해주세요.');
+                return false;
+            }
+
             const submitButton = sajuForm.querySelector('button[type="submit"]');
             const loadingOverlay = document.getElementById('loadingOverlay');
             const loadingMessage = document.getElementById('loadingMessage');
@@ -244,10 +250,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.closeAdBlockModal = function() {
-        const modal = document.getElementById('adblock-modal');
-        if (modal) {
-            modal.style.display = 'none';
-        }
+        // 광고차단기가 감지된 상태에서는 모달을 닫을 수 없음
+        alert('광고차단기를 해제한 후 새로고침해주세요. 서비스 이용을 위해 필수입니다.');
+        return false;
     };
 
     window.reloadPage = function() {
@@ -255,13 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.reload();
     };
 
-    // 모달 외부 클릭 시 닫기
-    document.addEventListener('click', function(event) {
-        const modal = document.getElementById('adblock-modal');
-        if (event.target === modal) {
-            closeAdBlockModal();
-        }
-    });
+    // 모달 외부 클릭 이벤트 제거 (모달이 꺼지지 않음)
 
     // 페이지 로드 완료 후 광고차단기 감지 실행
     setTimeout(() => {
