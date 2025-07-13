@@ -275,6 +275,11 @@ def handle_integrated_analysis(saju_result: dict, user_info: dict, user_hash: st
                          saju_result=parsed_saju_result,
                          analysis_parts=analysis_parts)
 
+@app.route('/health')
+def health_check():
+    """Health check endpoint for deployment"""
+    return {'status': 'healthy'}, 200
+
 @app.route('/')
 def home():
     import time
@@ -615,7 +620,7 @@ def privacy_policy():
     return render_template('privacy_policy.html')
 
 if __name__ == '__main__':
-    # Replit 환경에서는 0.0.0.0:8080으로 실행
+    # Cloud Run deployment requires 0.0.0.0:8080
     import os
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)
