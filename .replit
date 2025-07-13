@@ -1,2 +1,4 @@
 
 run = "python main.py"
+python --version
+pip install -r requirements.txt
