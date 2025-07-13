@@ -1,0 +1,19 @@
+# Virtual Environment
+venv/
+*.pyc
+__pycache__/
+
+# Application Cache & Logs
+cache/
+logs/
+
+# Local Environment Variables
+.env
+
+# OS-specific
+.DS_Store
+*.swo
+*.swp
+*.zip
+*.tar.gz
+*.rar 

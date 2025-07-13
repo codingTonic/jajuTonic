@@ -1,0 +1,123 @@
+{
+    "Package_Name": "일간별_감정_변동성_분석",
+    "Objective": "각 일간의 잠재적인 감정 변동성에 대한 다층적 분석을 제공하며, 여기에는 내재적 경향, 일반적인 유발 요인, 안정화 요인 및 핵심 십성 증폭기가 포함됩니다.",
+    "Disclaimer": "이 표는 *오직* 일간과 관련된 매우 일반화된 경향을 제공합니다. 실제 감정 패턴은 복잡하며 전체 사주 원국, 운의 주기 및 개인의 삶의 경험에 의해 크게 영향을 받습니다. 이것은 해석적 가이드이며 결정적인 심리 프로필이 아닙니다.",
+    "Day_Master_Emotional_Profiles": [
+        {
+            "ilgan_details": {"name": "갑 (甲)", "element": "양목"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중하",
+                "tendency_rating_numeric": 3,
+                "pattern_and_manifestation": "일반적으로 확고하고 전진합니다. 감정 변화는 종종 자신의 원칙에 대한 도전이나 성장에 대한 장애물과 관련이 있습니다. 외부 변동성보다는 내적 압력을 쌓는 경향이 있습니다.",
+                "common_triggers": ["통제되거나 제한받는 것", "프로젝트가 중단되거나 실패하는 것", "인식된 불의", "리더십에 의문이 제기되는 것"],
+                "stabilizing_factors": ["가시적인 진전을 보는 것", "명확한 목표와 목적을 갖는 것", "책임과 자율성이 주어지는 것", "신체 활동"]
+            },
+            "sipseong_amplifiers": ["편관 (偏官) - 엄청난 압박을 더함", "상관 (傷官) - 자신의 권위에 도전함"]
+        },
+        {
+            "ilgan_details": {"name": "을 (乙)", "element": "음목"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중",
+                "tendency_rating_numeric": 6,
+                "pattern_and_manifestation": "유연하고 적응력이 있지만 환경과 관계에 매우 민감합니다. 감정 변화는 미묘하지만 잦을 수 있습니다. 불안감을 느낄 때 내적 혼란이나 부드러운 변덕에 빠지기 쉽습니다.",
+                "common_triggers": ["불안정한 환경", "관계 갈등", "불안하거나 지지받지 못한다고 느끼는 것", "최종 결정을 내려야 하는 압박"],
+                "stabilizing_factors": ["안정적이고 지지적인 파트너/환경", "(덩굴처럼) 따라야 할 명확한 구조나 '격자'를 갖는 것", "창의적 표현", "실질적인 안정"]
+            },
+            "sipseong_amplifiers": ["편인 (偏印) - 의심과 불안감을 증가시킴", "칠살 (七殺) - 쉽게 압도당한다고 느낌"]
+        },
+        {
+            "ilgan_details": {"name": "병 (丙)", "element": "양화"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "상",
+                "tendency_rating_numeric": 9,
+                "pattern_and_manifestation": "빠르고 표현적인 감정 기복에 취약합니다. 흥분이 빠르게 좌절로 변할 수 있습니다. 감정은 종종 외부로 표현되고 눈에 띄며, 갑작스러운 불꽃과 같습니다. 조급하고 극적일 수 있습니다.",
+                "common_triggers": ["무시당하거나 주목의 중심이 되지 못하는 것", "일이 충분히 빨리 진행되지 않는 것", "인식된 불공정", "어둡거나 비관적인 환경"],
+                "stabilizing_factors": ["관심과 인정을 받는 것", "자유롭게 자신을 표현할 수 있는 것", "다른 사람을 이끌고 영감을 주는 것", "즉각적인 결과를 보는 것"]
+            },
+            "sipseong_amplifiers": ["겁재 (劫財) - 경쟁적인 자아를 더함", "상관 (傷官) - 반항적인 표현을 더함"]
+        },
+        {
+            "ilgan_details": {"name": "정 (丁)", "element": "음화"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중상",
+                "tendency_rating_numeric": 7,
+                "pattern_and_manifestation": "내부적이고 미묘하며 지속적인 감정 변화. 변동성은 종종 내면의 들끓음, 불안 또는 우울에 관한 것이며, 억압 기간 후에 예기치 않은 폭발로 이어질 수 있습니다.",
+                "common_triggers": ["인정받지 못하거나 오해받는다고 느끼는 것", "다른 사람의 거칠거나 무례한 행동", "감정적 외로움", "해결되지 않은 내적 갈등"],
+                "stabilizing_factors": ["깊고 의미 있는 대화", "진심 어린 조용한 감사를 받는 것", "차분하고 안정적이며 따뜻한 환경", "세밀하고 집중적인 작업에 참여하는 것"]
+            },
+            "sipseong_amplifiers": ["편관 (偏官) - 내적 불안을 강화함", "편인 (偏印) - 우울과 의심을 심화시킴"]
+        },
+        {
+            "ilgan_details": {"name": "무 (戊)", "element": "양토"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "하",
+                "tendency_rating_numeric": 2,
+                "pattern_and_manifestation": "일반적으로 안정적이고 기반이 잡혀 있습니다. 감정 변화는 느리고 점진적이지만, 발생하면 일시적인 떨림보다는 지진처럼 깊이 뿌리내리고 오래 지속될 수 있습니다.",
+                "common_triggers": ["갑작스럽고 달갑지 않은 변화", "신뢰나 신용의 위반", "너무 오랫동안 갇히거나 정체되어 있다고 느끼는 것", "서두르는 것"],
+                "stabilizing_factors": ["안정과 일상", "확고한 계획을 갖는 것", "다른 사람들을 위한 중재자나 보호자가 되는 것", "신뢰할 수 있는 관계"]
+            },
+            "sipseong_amplifiers": ["편관 (偏官) - 묻히는 느낌을 유발할 수 있음", "겁재 (劫財) - 완고한 소유욕을 유발할 수 있음"]
+        },
+        {
+            "ilgan_details": {"name": "기 (己)", "element": "음토"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중",
+                "tendency_rating_numeric": 5,
+                "pattern_and_manifestation": "적응력이 있지만 다른 사람의 감정을 쉽게 흡수할 수 있습니다. 변동성은 압도당하는 느낌, 우유부단함 또는 조용한 분노로 나타날 수 있습니다. 걱정과 과도한 생각에 빠지기 쉽습니다.",
+                "common_triggers": ["다른 사람의 문제를 너무 많이 떠안는 것", "명확한 방향성 부족", "자신의 양육 노력이 인정받지 못한다고 느끼는 것", "무질서한 환경"],
+                "stabilizing_factors": ["정의되고 관리 가능한 역할", "실용적인 방법으로 다른 사람을 돕는 것", "긍정적인 피드백과 감사", "정원 가꾸기 또는 자연과의 연결"]
+            },
+            "sipseong_amplifiers": ["편관 (偏官) - 불안과 부담감을 증가시킴", "편인 (偏印) - 자기 의심을 부채질함"]
+        },
+        {
+            "ilgan_details": {"name": "경 (庚)", "element": "양금"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중하",
+                "tendency_rating_numeric": 4,
+                "pattern_and_manifestation": "원칙이 있고 결단력 있음. 감정 변화는 원칙이 도전받을 때 발생합니다. 변동성은 길어진 변덕보다는 날카롭고 명확하며 대립적인 경향이 있습니다. 관계를 빨리 끊을 수 있습니다.",
+                "common_triggers": ["불의 또는 불공정", "비효율 또는 무능", "자신의 권위나 결정에 대한 도전", "모호성 또는 명확성 부족"],
+                "stabilizing_factors": ["결정적인 조치를 취하는 것", "정의가 실현되는 것을 보는 것", "명확한 목표나 개혁을 달성하는 것", "구조화되고 조직적인 환경"]
+            },
+            "sipseong_amplifiers": ["상관 (傷官) - 혹독하게 비판적으로 만듦", "편관 (偏官) - 격렬한 권력 투쟁으로 이어짐"]
+        },
+        {
+            "ilgan_details": {"name": "신 (辛)", "element": "음금"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중상",
+                "tendency_rating_numeric": 8,
+                "pattern_and_manifestation": "세련되고 민감합니다. 매우 예리하지만 쉽게 상처받거나 비판적일 수 있습니다. 변동성은 조용한 분노, 날카로운 비판 또는 철회로 나타납니다. 완벽주의에 빠지기 쉽습니다.",
+                "common_triggers": ["가혹한 말이나 비판", "인식된 경멸이나 모욕", "자신이나 타인의 불완전함", "세련되지 않거나 '더럽다'고 느끼는 것"],
+                "stabilizing_factors": ["아름답고 질서 있는 환경", "자신의 품질과 세련됨에 대한 인정", "정밀하고 세부적인 작업에 참여하는 것", "예의 바르고 존중하는 의사소통"]
+            },
+            "sipseong_amplifiers": ["상관 (傷官) - 완벽주의와 비판적 성향을 강화함", "편관 (偏官) - 압력에 대한 민감성을 크게 강화함"]
+        },
+        {
+            "ilgan_details": {"name": "임 (壬)", "element": "양수"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "상",
+                "tendency_rating_numeric": 9,
+                "pattern_and_manifestation": "광대한 감정적 깊이를 가졌지만 예측 불가능한 흐름과 파도에 취약합니다. 깊은 기분 변화나 안절부절못함을 가질 수 있습니다. 감정은 유동적이며 관리하지 않으면 압도될 수 있습니다.",
+                "common_triggers": ["제한받거나 지루하다고 느끼는 것", "자유나 움직임의 부족", "피상성", "연결하거나 흐를 수 없는 것"],
+                "stabilizing_factors": ["자유와 유연성", "지적 자극", "많은 다른 사람들과 연결되는 것", "여행 또는 물가에 있는 것"]
+            },
+            "sipseong_amplifiers": ["겁재 (劫財) - 야망과 감정의 쓰나미를 만들 수 있음", "편인 (偏印) - 깊고 어둡고 비밀스러운 생각으로 이어질 수 있음"]
+        },
+        {
+            "ilgan_details": {"name": "계 (癸)", "element": "음수"},
+            "volatility_analysis": {
+                "tendency_rating_qualitative": "중상",
+                "tendency_rating_numeric": 7,
+                "pattern_and_manifestation": "온화하고 직관적이지만 매우 민감하며 감정을 내면화하는 경향이 있습니다. 변동성은 종종 내면적이며, 환경에 따라 변덕, 우울 또는 조용한 철회로 나타납니다.",
+                "common_triggers": ["혼란스럽거나 가혹한 환경", "감정적 방치", "오해받는다고 느끼는 것", "너무 많은 부정성을 흡수하는 것"],
+                "stabilizing_factors": ["차분하고 평화로운 환경", "감정적 안정과 이해", "고독과 성찰의 시간", "무언가를 양육하는 것(식물, 애완동물, 아이디어)"]
+            },
+            "sipseong_amplifiers": ["편인 (偏印) - 우울과 고립 경향을 심화시킴", "상관 (傷官) - 예기치 않은 감정적 날카로움으로 이어질 수 있음"]
+        }
+    ],
+    "Key_Considerations_for_Analysis": [
+        "사주 균형: 균형 잡힌 사주는 일반적으로 더 많은 감정적 안정을 가져옵니다. 강한 충돌이나 오행 불균형은 변동성을 증가시킬 것입니다.",
+        "십성 영향: 상관, 편관 또는 과도한 편인과 같은 십성의 존재는 감정 패턴에 큰 영향을 미칠 수 있습니다.",
+        "운의 주기 (대운/세운): 충돌이나 중요한 오행 변화를 가져오는 시기는 일시적으로 감정 변동성을 증가시키거나 감소시킬 수 있습니다.",
+        "개인의 성숙도 및 자기 인식: 개인적 발전은 내재된 경향을 관리하는 데 중요한 역할을 합니다."
+    ]
+} 

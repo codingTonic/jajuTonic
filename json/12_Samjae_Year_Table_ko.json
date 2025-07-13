@@ -1,0 +1,118 @@
+{
+    "Package_Name": "삼재_연도표",
+    "Objective": "삼합(三合) 띠 그룹을 기준으로 과거, 현재, 미래 주기를 포함한 포괄적이고 다주기적인 삼재(三災) 기간 표를 제공하여 견고한 분석을 가능하게 합니다.",
+    "Key_Contents": {
+        "title": "삼재 연도표 (Samjae Year Table)",
+        "description": "삼재(三災)는 12년 주기 중 9년 차부터 3년간 특정 띠(연지 기준)에 해당하는 사람들이 겪게 된다고 알려진 시기를 의미합니다. 전통적인 관점에서 어려움이나 변화가 많을 수 있다고 여기는 기간이며, 3년간 다음과 같이 불립니다:",
+        "samjae_types": [
+            {"name": "들삼재 (Deulsamjae)", "meaning": "삼재가 시작되는 첫 해"},
+            {"name": "눌삼재 (Nulsamjae)", "meaning": "삼재의 두 번째 해 (묵삼재라고도 함)"},
+            {"name": "날삼재 (Nalsamjae)", "meaning": "삼재가 끝나는 세 번째 해"}
+        ],
+        "samjae_principle": "삼재는 띠를 기준으로 삼합(三合) 그룹별로 함께 들어오고 나갑니다. 특정 삼합 그룹의 기운이 가장 강해지기 직전의 3년간 겪게 되는 변화의 시기입니다.",
+        "samjae_periods": [
+            {
+                "group_name": "신자진 (申子辰) (수국)",
+                "affected_zodiacs": ["원숭이띠 (Monkey)", "쥐띠 (Rat)", "용띠 (Dragon)"],
+                "samjae_branch_years": "인묘진 (寅卯辰) (호랑이, 토끼, 용의 해)",
+                "samjae_cycles": [
+                    {
+                        "period_range": "2010년 ~ 2012년",
+                        "deulsamjae": "2010(庚寅)",
+                        "nulsamjae": "2011(辛卯)",
+                        "nalsamjae": "2012(壬辰)"
+                    },
+                    {
+                        "period_range": "2022년 ~ 2024년",
+                        "deulsamjae": "2022(壬寅)",
+                        "nulsamjae": "2023(癸卯)",
+                        "nalsamjae": "2024(甲辰)"
+                    },
+                    {
+                        "period_range": "2034년 ~ 2036년",
+                        "deulsamjae": "2034(甲寅)",
+                        "nulsamjae": "2035(乙卯)",
+                        "nalsamjae": "2036(丙辰)"
+                    }
+                ]
+            },
+            {
+                "group_name": "해묘미 (亥卯未) (목국)",
+                "affected_zodiacs": ["돼지띠 (Pig)", "토끼띠 (Rabbit)", "양띠 (Sheep)"],
+                "samjae_branch_years": "사오미 (巳午未) (뱀, 말, 양의 해)",
+                "current_status": "현재 삼재 기간입니다 (2025-2027년 기준).",
+                "samjae_cycles": [
+                    {
+                        "period_range": "2013년 ~ 2015년",
+                        "deulsamjae": "2013(癸巳)",
+                        "nulsamjae": "2014(甲午)",
+                        "nalsamjae": "2015(乙未)"
+                    },
+                    {
+                        "period_range": "2025년 ~ 2027년",
+                        "deulsamjae": "2025(乙巳)",
+                        "nulsamjae": "2026(丙午)",
+                        "nalsamjae": "2027(丁未)"
+                    },
+                    {
+                        "period_range": "2037년 ~ 2039년",
+                        "deulsamjae": "2037(丁巳)",
+                        "nulsamjae": "2038(戊午)",
+                        "nalsamjae": "2039(己未)"
+                    }
+                ]
+            },
+            {
+                "group_name": "인오술 (寅午戌) (화국)",
+                "affected_zodiacs": ["호랑이띠 (Tiger)", "말띠 (Horse)", "개띠 (Dog)"],
+                "samjae_branch_years": "신유술 (申酉戌) (원숭이, 닭, 개의 해)",
+                "samjae_cycles": [
+                    {
+                        "period_range": "2016년 ~ 2018년",
+                        "deulsamjae": "2016(丙申)",
+                        "nulsamjae": "2017(丁酉)",
+                        "nalsamjae": "2018(戊戌)"
+                    },
+                    {
+                        "period_range": "2028년 ~ 2030년",
+                        "deulsamjae": "2028(戊申)",
+                        "nulsamjae": "2029(己酉)",
+                        "nalsamjae": "2030(庚戌)"
+                    },
+                    {
+                        "period_range": "2040년 ~ 2042년",
+                        "deulsamjae": "2040(庚申)",
+                        "nulsamjae": "2041(辛酉)",
+                        "nalsamjae": "2042(壬戌)"
+                    }
+                ]
+            },
+            {
+                "group_name": "사유축 (巳酉丑) (금국)",
+                "affected_zodiacs": ["뱀띠 (Snake)", "닭띠 (Rooster)", "소띠 (Ox)"],
+                "samjae_branch_years": "해자축 (亥子丑) (돼지, 쥐, 소의 해)",
+                "samjae_cycles": [
+                    {
+                        "period_range": "2019년 ~ 2021년",
+                        "deulsamjae": "2019(己亥)",
+                        "nulsamjae": "2020(庚子)",
+                        "nalsamjae": "2021(辛丑)"
+                    },
+                    {
+                        "period_range": "2031년 ~ 2033년",
+                        "deulsamjae": "2031(辛亥)",
+                        "nulsamjae": "2032(壬子)",
+                        "nalsamjae": "2033(癸丑)"
+                    },
+                    {
+                        "period_range": "2043년 ~ 2045년",
+                        "deulsamjae": "2043(癸亥)",
+                        "nulsamjae": "2044(甲子)",
+                        "nalsamjae": "2045(乙丑)"
+                    }
+                ]
+            }
+        ],
+        "important_note": "삼재는 단순히 '나쁘다'는 의미가 아닙니다. 이 시기는 '정체된 기운을 정리하고 새로운 단계를 준비하는 변화의 시기'로 이해하는 것이 바람직합니다. 개인의 사주 원국과 대운(大運)의 흐름에 따라 삼재의 영향력은 크게 달라집니다. 삼재에 해당하는 해의 오행이 자신에게 필요한 기운(용신, 희신)일 경우, 오히려 발복의 기회가 되는 **복삼재(福三災)**가 될 수 있습니다. 반면, 불필요한 기운(기신, 구신)일 경우에는 어려움이 따르는 **악삼재(惡三災)**로 작용할 수 있으므로, 개인의 사주 전체를 통해 유불리를 판단해야 합니다."
+    }
+} 

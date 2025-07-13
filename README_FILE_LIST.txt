@@ -1,0 +1,22 @@
+total 264
+drwxr-xr-x@ 11 joonghyeonkim  staff    352  7 11 16:45 __pycache__
+-rw-r--r--@  1 joonghyeonkim  staff  19427  7 11 13:17 ai_saju_analyzer.py
+drwxr-xr-x@ 23 joonghyeonkim  staff    736  7 11 16:44 cache
+-rw-r--r--@  1 joonghyeonkim  staff  12835  7 11 13:19 cache_manager.py
+-rw-r--r--@  1 joonghyeonkim  staff   3575  7 11 13:19 config.py
+drwxr-xr-x@  6 joonghyeonkim  staff    192  7 11 16:08 docs
+-rw-r--r--@  1 joonghyeonkim  staff  16719  7 11 13:17 email_sender.py
+-rw-r--r--@  1 joonghyeonkim  staff   3455  7 11 16:47 html_generator.py
+drwxr-xr-x@ 19 joonghyeonkim  staff    608  7 10 13:24 json
+-rw-r--r--@  1 joonghyeonkim  staff  30320  7 13 13:15 main.py
+-rw-r--r--@  1 joonghyeonkim  staff   1959  7 11 16:22 Makefile
+drwxr-xr-x@  5 joonghyeonkim  staff    160  7 10 21:18 prompts
+-rw-r--r--@  1 joonghyeonkim  staff      0  7 13 13:23 README_FILE_LIST.txt
+-rw-r--r--@  1 joonghyeonkim  staff   5141  7 11 16:15 README.md
+-rw-r--r--@  1 joonghyeonkim  staff   2321  7 13 13:15 replit_env_setup.md
+-rw-r--r--@  1 joonghyeonkim  staff   4287  7 13 13:15 replit_setup.md
+-rw-r--r--@  1 joonghyeonkim  staff    849  7  6 18:26 requirements.txt
+-rw-r--r--@  1 joonghyeonkim  staff   7646  7  4 23:55 saju_calculator.py
+drwxr-xr-x@  4 joonghyeonkim  staff    128  7  6 19:08 static
+drwxr-xr-x@  6 joonghyeonkim  staff    192  7 11 16:46 templates
+drwxr-xr-x@  4 joonghyeonkim  staff    128  7  5 20:13 utils

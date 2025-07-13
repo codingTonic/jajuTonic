@@ -1,0 +1,234 @@
+{
+    "Package_Name": "천간_지지_오행_기초",
+    "Objective": "AI가 사주 예측 및 분석의 기초가 되는 천간, 지지, 오행의 기본 개념, 속성 및 상호 관계를 학습할 수 있도록 합니다.",
+    "Key_Contents": {
+        "Ohaeng": {
+            "Title": "1. 오행 (五行)",
+            "Definition_and_Importance": {
+                "Title": "1.1. 오행의 정의와 중요성:",
+                "Content": [
+                    "오행을 우주의 모든 것을 구성하고 변환하는 다섯 가지 기본 에너지/요소(목 木, 화 火, 토 土, 금 金, 수 水)로 정의합니다.",
+                    "사주 명리학 및 동양 철학의 기본 원리로서의 역할을 설명합니다."
+                ]
+            },
+            "Properties_and_Symbolism": {
+                "Title": "1.2. 각 원소의 속성 및 상징:",
+                "Elements": [
+                    {
+                        "name": "목 (木, Mok)",
+                        "properties": {
+                            "symbolism": "성장, 시작, 상승, 봄, 동쪽, 청색/녹색, 인(仁), 바람, 신맛, 숫자 3/8, 간/담",
+                            "keywords": ["성장", "시작", "상승", "봄", "동쪽", "청색/녹색", "인", "바람", "혁신", "계획", "직진", "관대함"]
+                        }
+                    },
+                    {
+                        "name": "화 (火, Hwa)",
+                        "properties": {
+                            "symbolism": "확장, 열정, 밝음, 여름, 남쪽, 적색, 예(禮), 열, 쓴맛, 숫자 2/7, 심장/소장",
+                            "keywords": ["확장", "열정", "밝음", "여름", "남쪽", "적색", "예", "열", "열정", "리더십", "가시성", "기쁨"]
+                        }
+                    },
+                    {
+                        "name": "토 (土, To)",
+                        "properties": {
+                            "symbolism": "중재, 포용, 안정, 계절 전환기/환절기, 중앙, 황색, 신(信), 습기, 단맛, 숫자 5/10, 비장/위",
+                            "keywords": ["중재", "포용", "안정", "전환", "중앙", "황색", "신뢰", "습기", "양육", "인내", "현실성", "조화"]
+                        }
+                    },
+                    {
+                        "name": "금 (金, Geum)",
+                        "properties": {
+                            "symbolism": "결실, 수확, 단단함, 가을, 서쪽, 백색, 의(義), 건조함, 매운맛, 숫자 4/9, 폐/대장",
+                            "keywords": ["결실", "수확", "단단함", "가을", "서쪽", "백색", "의", "건조함", "규율", "정의", "정밀함", "회복력"]
+                        }
+                    },
+                    {
+                        "name": "수 (水, Su)",
+                        "properties": {
+                            "symbolism": "수렴, 지혜, 차가움, 겨울, 북쪽, 흑색, 지(智), 추위, 짠맛, 숫자 1/6, 신장/방광",
+                            "keywords": ["수렴", "지혜", "차가움", "겨울", "북쪽", "흑색", "지혜", "추위", "유연성", "적응성", "직관", "비밀"]
+                        }
+                    }
+                ]
+            },
+            "Interrelationships": {
+                "Title": "1.3. 오행의 상호 관계:",
+                "Sangsaeng": {
+                    "Title": "상생 (相生, 생성/상호 생산 주기): 서로를 돕고 생성하는 관계.",
+                    "Examples": [
+                        {"source": "목", "target": "화", "relation": "생성", "explanation": "목생화: 나무가 불을 지핀다"},
+                        {"source": "화", "target": "토", "relation": "생성", "explanation": "화생토: 불이 재를 만들어 흙이 된다"},
+                        {"source": "토", "target": "금", "relation": "생성", "explanation": "토생금: 흙에서 금속이 추출된다"},
+                        {"source": "금", "target": "수", "relation": "생성", "explanation": "금생수: 금속 표면에 물이 맺힌다"},
+                        {"source": "수", "target": "목", "relation": "생성", "explanation": "수생목: 물이 나무를 키운다"}
+                    ]
+                },
+                "Sanggeuk": {
+                    "Title": "상극 (相剋, 제어/극복 주기): 서로를 제어하고 극복하는 관계.",
+                    "Examples": [
+                        {"source": "목", "target": "토", "relation": "제어", "explanation": "목극토: 나무 뿌리가 흙을 뚫고 분해한다"},
+                        {"source": "토", "target": "수", "relation": "제어", "explanation": "토극수: 흙이 물을 막거나 흡수한다"},
+                        {"source": "수", "target": "화", "relation": "제어", "explanation": "수극화: 물이 불을 끈다"},
+                        {"source": "화", "target": "금", "relation": "제어", "explanation": "화극금: 불이 금속을 녹인다"},
+                        {"source": "금", "target": "목", "relation": "제어", "explanation": "금극목: 금속(도끼)이 나무를 자른다"}
+                    ]
+                }
+            }
+        },
+        "Cheongan": {
+            "Title": "2. 천간 (天干)",
+            "Definition": "2.1. 천간의 정의: 천상의 기(Qi), 정신적 측면, 외적인 모습, 사회적 요인을 상징하는 10가지 요소.",
+            "List_and_Properties": {
+                "Title": "2.2. 십천간(十天干)의 목록 및 기본 속성:",
+                "Stems": [
+                    {"stem": "갑 (甲)", "romanized_name": "Gap", "yin_yang": "양", "element": "목", "keywords": ["큰 나무", "시작", "리더십", "강직함", "강한 의지", "우두머리", "지도자", "계획"]},
+                    {"stem": "을 (乙)", "romanized_name": "Eul", "yin_yang": "음", "element": "목", "keywords": ["작은 꽃/풀", "유연성", "적응력", "창의력", "온화함", "예술", "성장", "섬세함"]},
+                    {"stem": "병 (丙)", "romanized_name": "Byeong", "yin_yang": "양", "element": "화", "keywords": ["큰 태양", "밝음", "열정", "개방성", "가시성", "열정", "직설", "확장"]},
+                    {"stem": "정 (丁)", "romanized_name": "Jeong", "yin_yang": "음", "element": "화", "keywords": ["작은 촛불/등불", "내면의 빛", "지혜", "직관", "세심함", "인내", "영성", "따뜻함"]},
+                    {"stem": "무 (戊)", "romanized_name": "Mu", "yin_yang": "양", "element": "토", "keywords": ["큰 산/대지", "안정성", "신뢰성", "보호", "관대함", "인내", "신뢰성", "기반"]},
+                    {"stem": "기 (己)", "romanized_name": "Gi", "yin_yang": "음", "element": "토", "keywords": ["작은 밭/토양", "양육", "적응력", "유연성", "실용성", "세심함", "근면함", "다산성"]},
+                    {"stem": "경 (庚)", "romanized_name": "Gyeong", "yin_yang": "양", "element": "금", "keywords": ["큰 강철/검", "정의", "결단력", "힘", "개혁", "행동", "강직함", "용기"]},
+                    {"stem": "신 (辛)", "romanized_name": "Sin", "yin_yang": "음", "element": "금", "keywords": ["작은 보석/바늘", "정밀함", "세련됨", "아름다움", "날카로움", "민감성", "완벽주의", "섬세함"]},
+                    {"stem": "임 (壬)", "romanized_name": "Im", "yin_yang": "양", "element": "수", "keywords": ["큰 바다/강", "지혜", "흐름", "적응력", "전략", "탐험", "넓은 마음", "비밀"]},
+                    {"stem": "계 (癸)", "romanized_name": "Gye", "yin_yang": "음", "element": "수", "keywords": ["작은 비/이슬", "직관", "지성", "순수함", "양육", "고요함", "온화함", "신비주의"]}
+                ]
+            },
+            "Basic_Relationships": {
+                "Title": "2.3. 천간의 기본 관계 (개요만):",
+                "Hap": {
+                    "Title": "천간합 (天干合): 특정 쌍이 결합하여 잠재적으로 원소의 성질을 변경합니다.",
+                    "Combinations": [
+                        {"pair": "갑기합 (甲己合)", "combines_into": "토 (土)"},
+                        {"pair": "을경합 (乙庚合)", "combines_into": "금 (金)"},
+                        {"pair": "병신합 (丙辛合)", "combines_into": "수 (水)"},
+                        {"pair": "정임합 (丁壬合)", "combines_into": "목 (木)"},
+                        {"pair": "무계합 (戊癸合)", "combines_into": "화 (火)"}
+                    ]
+                },
+                "Chung": {
+                    "Title": "천간충 (天干冲): 특정 쌍이 충돌하여 동적인 변화나 갈등을 나타냅니다.",
+                    "Clashes": [
+                        {"clash": "갑경충 (甲庚冲)", "description": "양 목 대 양 금. 구조와 성장 간의 직접적이고 강력한 충돌로, 주요 개혁, 갑작스러운 변화 또는 갈등을 의미합니다."},
+                        {"clash": "을신충 (乙辛冲)", "description": "음 목 대 음 금. 섬세한 문제의 파괴, 신경 문제 또는 정밀함과 세부 사항과 관련된 갈등을 나타내는 정밀하고 날카로운 충돌입니다."},
+                        {"clash": "병임충 (丙壬冲)", "description": "양 화 대 양 수. 빛과 어둠 사이의 극적인 충돌로, 주요 변화, 비밀의 폭로 또는 공적인 일과 사적인 일 사이의 갈등을 의미합니다."},
+                        {"clash": "정계충 (丁癸冲)", "description": "음 화 대 음 수. 종종 심리적 혼란, 마음의 문제 또는 시력/영적 문제와 관련된 내부적 또는 감정적 충돌입니다."},
+                        {"clash": "무임충 (戊壬冲)", "description": "양 토 대 양 수. 종종 직접적인 충돌이라기보다는 제어 관계(토가 물을 막음)로 간주되지만, 자원이나 안정에 대한 갈등을 나타낼 수 있습니다."}
+                    ]
+                }
+            }
+        },
+        "Jiji": {
+            "Title": "3. 지지 (地支)",
+            "Definition": "3.1. 지지의 정의: 시간과 공간(방향)의 개념을 포함하여 지상의 기(Qi), 현실, 내면적 측면, 환경적 요인을 상징하는 12가지 요소.",
+            "List_and_Properties": {
+                "Title": "3.2. 십이지지(十二地支)의 목록 및 기본 속성:",
+                "Branches": [
+                    {"branch": "자 (子)", "romanized_name": "Ja", "yin_yang": "양", "element": "수", "animal": "쥐", "month_lunar": 11, "time_range": "23:30-01:30", "season": "겨울", "keywords": ["자정", "지혜", "비밀", "시작", "움직임", "유연성", "매력", "지성"]},
+                    {"branch": "축 (丑)", "romanized_name": "Chuk", "yin_yang": "음", "element": "토", "animal": "소", "month_lunar": 12, "time_range": "01:30-03:30", "season": "겨울", "keywords": ["이른 새벽", "근면", "인내", "안정성", "노력", "신뢰성", "인내", "고독"]},
+                    {"branch": "인 (寅)", "romanized_name": "In", "yin_yang": "양", "element": "목", "animal": "호랑이", "month_lunar": 1, "time_range": "03:30-05:30", "season": "봄", "keywords": ["새벽", "시작", "활동", "리더십", "용기", "야망", "확장", "모험"]},
+                    {"branch": "묘 (卯)", "romanized_name": "Myo", "yin_yang": "음", "element": "목", "animal": "토끼", "month_lunar": 2, "time_range": "05:30-07:30", "season": "봄", "keywords": ["일출", "성장", "온화함", "아름다움", "유연성", "조화", "예술적", "외교"]},
+                    {"branch": "진 (辰)", "romanized_name": "Jin", "yin_yang": "양", "element": "토", "animal": "용", "month_lunar": 3, "time_range": "07:30-09:30", "season": "봄", "keywords": ["아침", "권력", "야망", "변화", "권위", "신비주의", "변형", "활력"]},
+                    {"branch": "사 (巳)", "romanized_name": "Sa", "yin_yang": "음", "element": "화", "animal": "뱀", "month_lunar": 4, "time_range": "09:30-11:30", "season": "여름", "keywords": ["늦은 아침", "지혜", "직관", "신비", "전략", "세련됨", "교활함", "관찰"]},
+                    {"branch": "오 (午)", "romanized_name": "O", "yin_yang": "양", "element": "화", "animal": "말", "month_lunar": 5, "time_range": "11:30-13:30", "season": "여름", "keywords": ["정오", "열정", "활동", "독립", "자유", "에너지", "사회성", "인기"]},
+                    {"branch": "미 (未)", "romanized_name": "Mi", "yin_yang": "음", "element": "토", "animal": "양", "month_lunar": 6, "time_range": "13:30-15:30", "season": "여름", "keywords": ["오후", "양육", "온화함", "예술적", "연민", "책임감", "민감성", "창의력"]},
+                    {"branch": "신 (申)", "romanized_name": "Sin", "yin_yang": "양", "element": "금", "animal": "원숭이", "month_lunar": 7, "time_range": "15:30-17:30", "season": "가을", "keywords": ["늦은 오후", "영리함", "혁신", "적응력", "변화", "민첩성", "문제 해결", "기만"]},
+                    {"branch": "유 (酉)", "romanized_name": "Yu", "yin_yang": "음", "element": "금", "animal": "닭", "month_lunar": 8, "time_range": "17:30-19:30", "season": "가을", "keywords": ["일몰", "정밀함", "세련됨", "정의", "질서", "분별력", "세심함", "아름다움"]},
+                    {"branch": "술 (戌)", "romanized_name": "Sul", "yin_yang": "양", "element": "토", "animal": "개", "month_lunar": 9, "time_range": "19:30-21:30", "season": "가을", "keywords": ["저녁", "충성", "신뢰성", "보호", "정직", "책임감", "정의", "수호"]},
+                    {"branch": "해 (亥)", "romanized_name": "Hae", "yin_yang": "음", "element": "수", "animal": "돼지", "month_lunar": 10, "time_range": "21:30-23:30", "season": "겨울", "keywords": ["밤", "관대함", "풍요", "즐거움", "자유", "충동성", "친절", "순수함"]}
+                ]
+            },
+            "Basic_Relationships": {
+                "Title": "3.3. 지지의 기본 관계 (개요만):",
+                "Hap": {
+                    "Title": "지지합 (地支合): 지지가 결합하여 강력한 원소의 힘이나 특정 관계를 형성합니다.",
+                    "Six_Harmonies": [
+                        {"pair": "자축합 (자축합)", "combines_into": "토 (土)"},
+                        {"pair": "인해합 (인해합)", "combines_into": "목 (木)"},
+                        {"pair": "묘술합 (묘술합)", "combines_into": "화 (火)"},
+                        {"pair": "진유합 (진유합)", "combines_into": "금 (金)"},
+                        {"pair": "사신합 (사신합)", "combines_into": "수 (水)"},
+                        {"pair": "오미합 (오미합)", "combines_into": "토 (土) 또는 화 (火)", "note": "결과 원소는 사주의 지배적인 에너지에 따라 달라지지만 '덥고' '건조한' 성질을 유지합니다. 종종 지원(화) 또는 흡수(토)를 의미하는 강력한 결합으로 간주됩니다."}
+                    ],
+                    "Three_Harmonies": [
+                        {"group": "신자진합 (신자진합)", "combines_into": "수 (水) (수국)"},
+                        {"group": "인오술합 (인오술합)", "combines_into": "화 (火) (화국)"},
+                        {"group": "해묘미합 (해묘미합)", "combines_into": "목 (木) (목국)"},
+                        {"group": "사유축합 (사유축합)", "combines_into": "금 (金) (금국)"}
+                    ],
+                    "Directional_Combinations": [
+                        {"group": "인묘진합 (인묘진합)", "combines_into": "목 (木) (봄 방향)"},
+                        {"group": "사오미합 (사오미합)", "combines_into": "화 (火) (여름 방향)"},
+                        {"group": "신유술합 (신유술합)", "combines_into": "금 (金) (가을 방향)"},
+                        {"group": "해자축합 (해자축합)", "combines_into": "수 (水) (겨울 방향)"}
+                    ]
+                },
+                "Chung": {
+                    "Title": "지지충 (地支冲): 지지가 강하게 충돌하여 종종 주요한 변화, 이동, 분리 또는 갈등을 나타냅니다.",
+                    "Clashes": [
+                        "자오충 (자오충)",
+                        "축미충 (축미충)",
+                        "인신충 (인신충)",
+                        "묘유충 (묘유충)",
+                        "진술충 (진술충)",
+                        "사해충 (사해충)"
+                    ]
+                },
+                "Other_Interactions": {
+                    "Title": "형(刑), 파(破), 해(害): 복잡한 상호 작용. 세부 사항은 나중 단계로 연기합니다.",
+                    "Hyeong": [
+                        "자묘형 (자묘형)",
+                        "인사신형 (인사신형)",
+                        "축술미형 (축술미형)",
+                        "진오유해 자형 (진오유해 자형)"
+                    ],
+                    "Pa": [
+                        "자유파 (자유파)",
+                        "묘오파 (묘오파)",
+                        "인해파 (인해파)",
+                        "사신파 (사신파)",
+                        "진축파 (진축파)",
+                        "술미파 (술미파)"
+                    ],
+                    "Hae": [
+                        "자미해 (자미해)",
+                        "축오해 (축오해)",
+                        "인사해 (인사해)",
+                        "묘진해 (묘진해)",
+                        "신해해 (신해해)",
+                        "유술해 (유술해)"
+                    ]
+                }
+            }
+        },
+        "Cheongan_Jiji_Combination_and_Basic_Application": {
+            "Title": "4. 천간-지지 조합 및 기본 적용",
+            "Yukgapja": {
+                "Title": "4.1. 육십갑자 (六十甲子):",
+                "Explanation": "10개의 천간과 12개의 지지를 결합하여 60개의 고유한 간지(干支) 쌍을 만드는 원리를 설명합니다(양간은 양지와, 음간은 음지와 결합).",
+                "60_Ganji_Cycle_Chart": [
+                    "1. 갑자 (Gapja)", "2. 을축 (Eulchuk)", "3. 병인 (Byeongin)", "4. 정묘 (Jeongmyo)", "5. 무진 (Mujin)",
+                    "6. 기사 (Gisa)", "7. 경오 (Gyeongo)", "8. 신미 (Sinmi)", "9. 임신 (Imsin)", "10. 계유 (Gyeyu)",
+                    "11. 갑술 (Gapsul)", "12. 을해 (Eulhae)", "13. 병자 (Byeongja)", "14. 정축 (Jeongchuk)", "15. 무인 (Muin)",
+                    "16. 기묘 (Gimyo)", "17. 경진 (Gyeongjin)", "18. 신사 (Sinsa)", "19. 임오 (Imo)", "20. 계미 (Gyemi)",
+                    "21. 갑신 (Gapsin)", "22. 을유 (Eulyu)", "23. 병술 (Byeongsul)", "24. 정해 (Jeonghae)", "25. 무자 (Muja)",
+                    "26. 기축 (Gichuk)", "27. 경인 (Gyeongin)", "28. 신묘 (Sinmyo)", "29. 임진 (Imjin)", "30. 계사 (Gyesa)",
+                    "31. 갑오 (Gapo)", "32. 을미 (Eulmi)", "33. 병신 (Byeongsin)", "34. 정유 (Jeongyu)", "35. 무술 (Musul)",
+                    "36. 기해 (Gihai)", "37. 경자 (Gyeongja)", "38. 신축 (Sinchuk)", "39. 임인 (Imin)", "40. 계묘 (Gyemyo)",
+                    "41. 갑진 (Gapjin)", "42. 을사 (Eulsa)", "43. 병오 (Byeongo)", "44. 정미 (Jeongmi)", "45. 무신 (Musin)",
+                    "46. 기유 (Giyu)", "47. 경술 (Gyeongsul)", "48. 신해 (Sinhai)", "49. 임자 (Imja)", "50. 계축 (Gyechuk)",
+                    "51. 갑인 (Gabin)", "52. 을묘 (Eulmyo)", "53. 병진 (Byeongjin)", "54. 정사 (Jeongsa)", "55. 무오 (Muo)",
+                    "56. 기미 (Gimi)", "57. 경신 (Gyeongsin)", "58. 신유 (Sinyu)", "59. 임술 (Imsul)", "60. 계해 (Gyehae)"
+                ],
+                "Application_Note": "각 간지 쌍이 사주(년, 월, 일, 시)의 기본 단위를 형성함을 설명합니다."
+            },
+            "Saju_Palja_Introduction": {
+                "Title": "4.2. 사주팔자 소개 (四柱八字):",
+                "Content": [
+                    "사람의 출생 년, 월, 일, 시를 나타내며, 각각 간지(천간-지지) 쌍으로 표현됨을 설명합니다.",
+                    "구조 설명: 8개의 글자(팔자)로 구성된 4개의 기둥(사주).",
+                    "이 패키지에서 학습한 천간, 지지, 오행이 사주를 구성하고 해석하는 기본 요소임을 강조합니다."
+                ]
+            }
+        }
+    }
+} 

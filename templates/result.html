@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>사주 분석 결과</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ user_info.name }}님의 사주 기본 정보</h1>
+        <dl class="result-grid">
+            <dt>양력 생일:</dt>
+            <dd>{{ result.solar }}</dd>
+            
+            <dt>음력 생일:</dt>
+            <dd>{{ result.lunar }}</dd>
+            
+            <dt>태어난 해 (년주):</dt>
+            <dd>{{ result.년주 }}</dd>
+            
+            <dt>태어난 달 (월주):</dt>
+            <dd>{{ result.월주 }}</dd>
+            
+            <dt>태어난 날 (일주):</dt>
+            <dd>{{ result.일주 }}</dd>
+            
+            <dt>태어난 시간 (시주):</dt>
+            <dd>{{ result.시주 }}</dd>
+        </dl>
+        
+        <!-- 사주 분석 시작 섹션 -->
+        <div class="analysis-section">
+            <h2>사주 종합 분석</h2>
+            <p class="analysis-subtitle">
+                당신의 사주를 깊이 분석하여 8개 파트의 상세한 해석을 제공합니다.<br>
+                모든 분석이 완료되면 전체 결과를 한 번에 확인할 수 있습니다.
+            </p>
+            
+            <div class="analysis-features">
+                <h3>📋 분석 내용</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-icon">🎯</span>
+                        <span class="feature-text">Part 1~8 전체 분석 (성격, 애정운, 직업운, 건강운 등)</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📊</span>
+                        <span class="feature-text">개인화된 상세 해석 및 운세 예측</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">💡</span>
+                        <span class="feature-text">실용적인 조언과 개선 방향 제시</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📄</span>
+                        <span class="feature-text">HTML 다운로드 가능</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="analysisForm">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <!-- 사용자 정보 히든 필드 -->
+                <input type="hidden" name="name" value="{{ user_info.name }}">
+                <input type="hidden" name="birth_date" value="{{ user_info.birthdate }}">
+                <input type="hidden" name="birth_time" value="{{ user_info.birthtime }}">
+                <input type="hidden" name="gender" value="{{ user_info.gender }}">
+                <input type="hidden" name="relationship" value="{{ user_info.relationship }}">
+                <input type="hidden" name="mbti" value="{{ user_info.mbti }}">
+                
+                <div class="button-container">
+                    <button type="button" class="btn btn-primary" onclick="showLoading(false)">
+                        사주 종합 분석 시작하기
+                    </button>
+                    <a href="/" class="btn btn-secondary">다시 입력하기</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 로딩 오버레이 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 class="loading-message">사주 종합 분석 중...</h2>
+            <p class="loading-detail">
+                당신의 인생 전체를 꿰뚫어보는 깊이 있는 분석이 진행 중입니다. <br>
+                잠시만 기다려주세요! (약 3~5분 소요)
+            </p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <ul class="loading-steps">
+                <li id="step-1">Part 1. 본캐와 숨겨진 재능 분석</li>
+                <li id="step-2">Part 2. 현실 속의 나: 일·돈·사랑</li>
+                <li id="step-3">Part 3. 시간 속의 나: 인생 여정</li>
+                <li id="step-4">Part 4. 인생의 파도 항해법</li>
+                <li id="step-5">Part 5. 맞춤 생활 꿀팁 (기회·파도)</li>
+                <li id="step-6">Part 6. 맞춤 생활 꿀팁 (건강·라이프)</li>
+                <li id="step-7">Part 7. 너의 이야기, 너의 힘</li>
+                <li id="step-8">Part 8. 종합 결론 및 최종 조언</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/result_script.js') }}"></script>
+</body>
+</html>

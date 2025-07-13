@@ -1,0 +1,161 @@
+{
+    "Package_Name": "운세_타이밍_프레임워크",
+    "Objective": "각 연도의 에너지 및 상호 작용에 대한 분석적 분해를 기반으로 5년(2025-2029) 동안의 잠재적인 운세 테마를 이해하고 학습하기 위한 구조화되고 계층화된 프레임워크를 제공합니다.",
+    "Disclaimer": "이 표는 이해를 돕기 위한 단순화된 프레임워크입니다. 실제 개인의 운세는 전체 사주팔자 구조, 대운, 세운, 개인의 선택 및 노력의 복잡한 결과입니다.",
+    "Usage_Guide": "각 연도의 상세 분석을 확인하세요. 개인화하려면, 해당 연도의 간지와 연관된 십성(시뮬레이션 참조)이 당신의 일간, 네 기둥(특히 일지와 월지), 중요한 십성 및 현재 대운과 어떻게 관련되는지 비교하세요. 합, 충, 형과 같은 중요한 상호 작용을 찾아보세요.",
+    "Fortune_Timing_Table": {
+        "title": "5개년 운세 타이밍 프레임워크 (2025-2029)",
+        "years": [
+            {
+                "year": 2025,
+                "is_current_year": true,
+                "ganji_details": {
+                    "hanja": "乙巳", "hangul": "을사", "heavenly_stem": "乙", "earthly_branch": "巳", "zodiac": "뱀",
+                    "stem_element": "음목", "branch_element": "음화"
+                },
+                "energy_analysis": {
+                    "stem_branch_relation": "목생화 (木生火)",
+                    "description": "유연한 목의 에너지가 표현력이 풍부한 화의 에너지를 키워줍니다. 이는 성장이 외부적 표현, 창의성, 활동으로 이어짐을 의미합니다."
+                },
+                "key_interactions": {
+                    "samjae": null,
+                    "hap": "신(申)", "chung": "해(亥)", "hyeong": "인(寅), 신(申)", "pa": "신(申)",
+                    "dohwa_peach_blossom": "일지가 酉(닭) 또는 丑(소)이거나, 년지가 酉/丑인 경우."
+                },
+                "sipseong_simulation": {
+                    "day_master_example": "甲목 (양목)",
+                    "stem_sipseong": "겁재 (劫財)",
+                    "branch_sipseong": "식신 (食神)",
+                    "interpretation": "경쟁적인 추진력과 동료와의 상호 작용(겁재)이 새로운 창의적 표현, 활동 및 생산성(식신)을 촉진합니다."
+                },
+                "fortune_themes": {
+                    "general": ["유연한 성장", "외부 활동 증가", "창의적 표현", "아이디어의 실용적 적용", "적응력이 핵심"],
+                    "wealth": ["'식상생재(食傷生財)'에 좋은 흐름", "자산 활용 능력 증가", "적극적인 활동을 통한 이득", "충동적인 투자에 대한 주의 필요"],
+                    "career_status": ["표현력과 기획력을 선보일 시기", "전문성 강화", "조직 내 역할 변화 가능성", "인정받고 싶은 욕구 증가"],
+                    "relationship": ["사(巳) 지지의 도화살 효과로 매력 증진", "활발한 연애 생활", "감정적 기복", "관계가 진전되거나 복잡해질 가능성"],
+                    "caution": ["사(巳)와 관련된 형/충에 주의", "감정 변동성 관리", "건강: 심혈관, 신경계", "문서 및 계약 주의"]
+                }
+            },
+            {
+                "year": 2026,
+                "is_current_year": false,
+                "ganji_details": {
+                    "hanja": "丙午", "hangul": "병오", "heavenly_stem": "丙", "earthly_branch": "午", "zodiac": "말",
+                    "stem_element": "양화", "branch_element": "양화"
+                },
+                "energy_analysis": {
+                    "stem_branch_relation": "천간과 지지가 같은 오행 (화)",
+                    "description": "극도로 강하고 순수한 화(火)의 에너지. 강렬한 열정, 높은 가시성, 리더십, 급진적인 변화를 의미합니다. 좋든 나쁘든 사물이 밝게 드러나는 해입니다."
+                },
+                "key_interactions": {
+                    "samjae": {"status": "눌삼재", "zodiacs": ["돼지띠", "토끼띠", "양띠"]},
+                    "hap": "미(未)", "chung": "자(子)", "hyeong": "오(午) - 자형", "pa": "묘(卯)",
+                    "dohwa_peach_blossom": "보편적인 도화살, 매우 강한 효과."
+                },
+                "sipseong_simulation": {
+                    "day_master_example": "甲목 (양목)",
+                    "stem_sipseong": "식신 (食神)",
+                    "branch_sipseong": "상관 (傷官)",
+                    "interpretation": "강렬한 창의적 결과물과 표현의 해(식신 & 상관). 예술적 성공 또는 권위에 대한 날카로운 반항의 높은 잠재력."
+                },
+                "fortune_themes": {
+                    "general": ["강한 활동과 열정", "높은 가시성과 인정", "급진적인 변화", "빛과 그림자 공존", "표현 욕구의 정점"],
+                    "wealth": ["높은 활동성을 통한 부의 창출", "상당한 재정적 누출 가능성", "과소비 주의", "현금 흐름의 높은 변동성"],
+                    "career_status": ["명성과 평판 상승", "법적 문제(관재수) 주의", "직장에서의 치열한 경쟁", "리더십 기회", "책임 증가"],
+                    "relationship": ["강력한 도화살 효과", "관계가 매우 빠르게 진전되거나 변할 수 있음", "번아웃이나 갈등을 피하기 위한 감정 관리 필요"],
+                    "caution": ["오(午)와 관련된 자형 및 충돌 주의", "과열이 주요 위험", "건강: 화 관련 문제(심장, 눈, 염증)", "문서/계약 실수 위험"]
+                }
+            },
+            {
+                "year": 2027,
+                "is_current_year": false,
+                "ganji_details": {
+                    "hanja": "丁未", "hangul": "정미", "heavenly_stem": "丁", "earthly_branch": "未", "zodiac": "양",
+                    "stem_element": "음화", "branch_element": "음토"
+                },
+                "energy_analysis": {
+                    "stem_branch_relation": "화생토 (火生土)",
+                    "description": "따뜻하고 표현적인 화의 에너지가 실용적이고 구체적인 토를 키웁니다. 아이디어를 현실로 만들고, 내적 성찰이 구체적인 결과로 이어지며, 안정을 추구함을 의미합니다."
+                },
+                "key_interactions": {
+                    "samjae": {"status": "날삼재", "zodiacs": ["돼지띠", "토끼띠", "양띠"]},
+                    "hap": "오(午)", "chung": "축(丑)", "hyeong": "축(丑), 술(戌)", "pa": "술(戌)",
+                    "dohwa_peach_blossom": null
+                },
+                "sipseong_simulation": {
+                    "day_master_example": "甲목 (양목)",
+                    "stem_sipseong": "상관 (傷官)",
+                    "branch_sipseong": "정재 (正財)",
+                    "interpretation": "창의적인 재능과 표현(상관)이 안정적이고 구체적인 부(정재)를 창출하는 데 사용됩니다. 기술을 수익화하기 좋은 해입니다."
+                },
+                "fortune_themes": {
+                    "general": ["내적 성찰과 조정", "결론을 내리거나 실현하는 것", "안정 추구", "차분한 외면 속의 민감성"],
+                    "wealth": ["'식상생재'의 흐름이 구체화됨", "자산 관리 및 축적에 집중", "안정적인 재무 계획이 중요"],
+                    "career_status": ["권위 인물(관성)과의 조정 및 조화", "실용적이고 세부적인 기술 과시", "조직 내 역할 재정의"],
+                    "relationship": ["관계를 안정시키거나 마무리할 시기", "내면의 감정적 연결의 중요성", "가족 또는 가정 관련 문제가 표면화될 가능성"],
+                    "caution": ["미(未)와 관련된 상호작용(충, 형, 파) 주의", "건강: 소화기 계통, '조토'로 인한 문제", "마무리와 정리의 중요성", "정(丁) 천간의 상호작용 관리"]
+                }
+            },
+            {
+                "year": 2028,
+                "is_current_year": false,
+                "ganji_details": {
+                    "hanja": "戊申", "hangul": "무신", "heavenly_stem": "戊", "earthly_branch": "申", "zodiac": "원숭이",
+                    "stem_element": "양토", "branch_element": "양금"
+                },
+                "energy_analysis": {
+                    "stem_branch_relation": "토생금 (土生金)",
+                    "description": "거대하고 안정적인 토의 에너지가 날카롭고 실용적인 금을 지원합니다. 주요한 변화의 시작, 강한 의지력, 견고한 기반 위에서 행동하는 것을 의미합니다. 전환점이 되는 해입니다."
+                },
+                "key_interactions": {
+                    "samjae": {"status": "들삼재", "zodiacs": ["뱀띠", "닭띠", "소띠"]},
+                    "hap": "사(巳)", "chung": "인(寅)", "hyeong": "인(寅), 사(巳)",
+                    "dohwa_peach_blossom": null
+                },
+                "sipseong_simulation": {
+                    "day_master_example": "甲목 (양목)",
+                    "stem_sipseong": "편재 (偏財)",
+                    "branch_sipseong": "편관 (偏官)",
+                    "interpretation": "대규모 재물과 영향력에 대한 욕구(편재)가 상당한 도전, 권위, 스트레스(편관)를 만납니다. 고위험 고수익의 권력 게임의 해입니다."
+                },
+                "fortune_themes": {
+                    "general": ["주요 변화의 시작", "이동과 여행 (역마)", "독립성과 의지력 강화", "중요한 전환점"],
+                    "wealth": ["재무 관리의 중요성 증가", "투기 기회와 위험 공존", "재물 변동성 높음"],
+                    "career_status": ["직업 변경 또는 이전 가능성", "새로운 환경에 적응", "권력과 명예에 대한 욕구 발현", "법적 문제 주의"],
+                    "relationship": ["관계 변화 또는 새로운 만남", "역마 효과는 장거리 연애를 의미할 수 있음", "갈등 관리 필요"],
+                    "caution": ["신(申)과 관련된 형/충에 주의", "건강: 대장, 폐, 관절", "갑작스러운 변화나 사고", "사고/수술 위험"]
+                }
+            },
+            {
+                "year": 2029,
+                "is_current_year": false,
+                "ganji_details": {
+                    "hanja": "己酉", "hangul": "기유", "heavenly_stem": "己", "earthly_branch": "酉", "zodiac": "닭",
+                    "stem_element": "음토", "branch_element": "음금"
+                },
+                "energy_analysis": {
+                    "stem_branch_relation": "토생금 (土生金)",
+                    "description": "양육하고 실용적인 토의 에너지가 정밀하고 세련된 금을 지원합니다. 이익을 공고히 하고, 실용적인 안정에 집중하며, 노력의 결실을 거두는 것을 의미합니다."
+                },
+                "key_interactions": {
+                    "samjae": {"status": "눌삼재", "zodiacs": ["뱀띠", "닭띠", "소띠"]},
+                    "hap": "진(辰)", "chung": "묘(卯)", "hyeong": "유(酉) - 자형", "pa": "자(子)",
+                    "dohwa_peach_blossom": "일지가 巳(뱀) 또는 丑(소)이거나, 년지가 巳/丑인 경우."
+                },
+                "sipseong_simulation": {
+                    "day_master_example": "甲목 (양목)",
+                    "stem_sipseong": "정재 (正財)",
+                    "branch_sipseong": "정관 (正官)",
+                    "interpretation": "고전적인 '재생관' 조합. 재정적 안정(정재)이 명예, 안정적인 직업, 좋은 평판(정관)으로 이어집니다. 직업과 재물에 매우 유리한 해입니다."
+                },
+                "fortune_themes": {
+                    "general": ["기반 다지기", "실용적인 안정 추구", "이익 지향적 사고방식", "결과를 수확하는 시기"],
+                    "wealth": ["안정적인 부의 축적", "재무 계획에 대한 관심 증가", "부동산 또는 문서 기반 자산에 유리", "지출보다 저축의 시기"],
+                    "career_status": ["안정적인 직장 생활", "실용적인 기술에 대한 인정", "조직 내 역할 강화", "실질적인 혜택을 동반한 명예"],
+                    "relationship": ["내적 안정의 중요성", "신뢰 기반 관계 형성", "갈등을 피하고 조화를 추구하는 경향"],
+                    "caution": ["유(酉)와 관련된 상호작용(형, 충, 파) 주의", "건강: 위/비장, 피부, 금 에너지 관련 문제", "변화에 대한 저항이 좌절을 유발할 수 있음"]
+                }
+            }
+        ]
+    }
+} 

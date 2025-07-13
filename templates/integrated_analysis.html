@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user_info.name }}님의 사주 분석 결과</title>
+    <link rel="stylesheet" href="static/css/analysis_style.css">
+</head>
+<body>
+    <div class="report-container">
+        {% if not is_download %}
+        <div class="report-controls">
+            <a href="/download-html" class="btn btn-secondary">🌐 HTML 다운로드</a>
+            <a href="/" class="btn btn-secondary">🔄 다시 입력하기</a>
+        </div>
+        {% endif %}
+
+        <h1>{{ user_info.name }}님의 사주 분석 리포트</h1>
+        
+        <h2>기본 정보</h2>
+        <div class="info-box info-grid">
+            <div>
+                <h3>개인 정보</h3>
+                <strong>생년월일:</strong> {{ user_info.birthdate }}<br>
+                <strong>태어난 시간:</strong> {{ user_info.birthtime or '모름' }}<br>
+                <strong>성별:</strong> {{ '남성' if user_info.gender == 'male' else '여성' }}<br>
+                <strong>연애 상태:</strong> 
+                {% if user_info.relationship == 'single' %}솔로
+                {% elif user_info.relationship == 'dating' %}연애중
+                {% elif user_info.relationship == 'married' %}기혼
+                {% else %}{{ user_info.relationship }}{% endif %}<br>
+                {% if user_info.mbti %}
+                <strong>MBTI:</strong> {{ user_info.mbti }}<br>
+                {% endif %}
+            </div>
+            {% if saju_result %}
+            <div>
+                <h3>사주 정보</h3>
+                <strong>연주(年柱):</strong> {{ saju_result.year_pillar.heavenly_stem }}{{ saju_result.year_pillar.earthly_branch }}<br>
+                <strong>월주(月柱):</strong> {{ saju_result.month_pillar.heavenly_stem }}{{ saju_result.month_pillar.earthly_branch }}<br>
+                <strong>일주(日柱):</strong> {{ saju_result.day_pillar.heavenly_stem }}{{ saju_result.day_pillar.earthly_branch }}<br>
+                <strong>시주(時柱):</strong> {{ saju_result.time_pillar.heavenly_stem }}{{ saju_result.time_pillar.earthly_branch }}<br>
+                <strong>일간(日干):</strong> {{ saju_result.day_master }}<br>
+            </div>
+            {% endif %}
+        </div>
+        
+        <h2>분석 목차</h2>
+        <div class="toc-box">
+            {% for part in analysis_parts %}
+            <div class="toc-part-group">
+                <span class="toc-item">Part {{ loop.index }}: {{ part.title }}</span>
+                {% for section in part.sections %}
+                <span class="toc-sub-item">{{ section.title }}</span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+        {% for part in analysis_parts %}
+        <hr>
+        <h2>Part {{ loop.index }}: {{ part.title }}</h2>
+        <div class="analysis-section">
+            {% for section in part.sections %}
+            <h3>{{ section.title }}</h3>
+            {% for paragraph in section.content %}
+            <div class="content">{{ paragraph.text | format_content | safe }}</div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html> 
