@@ -79,4 +79,23 @@ class SajuHTMLGenerator:
                 f'<style>{css_content}</style>'
             )
         
+        # 다운로드 버전에서는 광고 관련 요소들 제거
+        import re
+        
+        # 쿠팡 광고 섹션 제거
+        rendered_html = re.sub(
+            r'<!-- 쿠팡 파트너스 광고 -->.*?</div>\s*</div>',
+            '',
+            rendered_html,
+            flags=re.DOTALL
+        )
+        
+        # 광고차단기 감지 모달 제거
+        rendered_html = re.sub(
+            r'<!-- 광고차단기 감지 모달 -->.*?</script>',
+            '',
+            rendered_html,
+            flags=re.DOTALL
+        )
+        
         return rendered_html 
