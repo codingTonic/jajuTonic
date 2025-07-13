@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>너의 우주를 열어봐</h1>
+        <h1>운세 제미니 - 너의 사주 이야기</h1>
         <p>사주팔자를 기반으로 당신의 모든 것을 알려줄게!</p>
         
         <form id="sajuForm" action="/calculate" method="post">
@@ -69,28 +69,32 @@
         <!-- 개인정보 관련 섹션 -->
         <div class="privacy-section">
             <button type="button" class="btn-privacy" onclick="clearPrivacyData()">
-                🗑️ 개인정보 삭제
+                개인정보 삭제
             </button>
             <p class="privacy-note">저장된 개인정보와 분석 결과를 모두 삭제합니다.</p>
         </div>
         
         <!-- 개인정보 처리방침 링크 -->
         <div class="privacy-links">
-            <a href="/privacy-policy" class="privacy-link">📋 개인정보 처리방침</a>
+            <a href="/privacy-policy" class="privacy-link">개인정보 처리방침</a>
         </div>
         
         <div class="footer-text">
-            © 2025 너의 사주 이야기. All rights reserved.ㅌ
+            © 2025 너의 사주 이야기. All rights reserved.
         </div>
     </div>
 
     <!-- 로딩 오버레이 -->
     <div id="loadingOverlay">
-        <div class="spinner">
-            <span class="spinner-text"></span>
-        </div>
-        <div class="loading-message" id="loadingMessage">
-            당신의 우주를 분석하고 있어요...
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 class="loading-message" id="loadingMessage">
+                당신의 사주를 분석하고 있어요...
+            </h2>
+            <p class="loading-detail">
+                사주 정보를 입력받아 분석을 준비하고 있습니다.<br>
+                잠시만 기다려주세요!
+            </p>
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/index_script.js') }}"></script>

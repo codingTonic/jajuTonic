@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, jsonify, render_template_string
 from flask_wtf.csrf import CSRFProtect
+from dotenv import load_dotenv
+import os
+
+# .env 파일 로드
+load_dotenv()
+
 from config import AppConfig
 from ai_saju_analyzer import AISajuAnalyzer
 from saju_calculator import calculate_saju

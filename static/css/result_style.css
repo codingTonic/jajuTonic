@@ -184,21 +184,6 @@ h1 {
     max-width: 400px;
 }
 
-.loading-spinner {
-    width: 60px;
-    height: 60px;
-    border: 5px solid #C8A8D8;
-    border-top: 5px solid #6667AB;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 25px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 .loading-message {
     font-size: 1.4rem;
     color: #6667AB;
@@ -258,9 +243,15 @@ h1 {
 }
 
 .loading-steps li.in-progress::before {
-    content: "🔄";
+    content: "";
     display: inline-block;
-    animation: spin 1.5s linear infinite;
+    width: 24px;
+    height: 24px;
+    background-image: url('/static/img/loding.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .loading-steps li.completed {

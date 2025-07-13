@@ -10,8 +10,8 @@
     <div class="report-container">
         {% if not is_download %}
         <div class="report-controls">
-            <a href="/download-html" class="btn btn-secondary">🌐 HTML 다운로드</a>
-            <a href="/" class="btn btn-secondary">🔄 다시 입력하기</a>
+            <a href="/download-html" class="btn btn-secondary">HTML 다운로드</a>
+            <a href="/" class="btn btn-secondary">다시 입력하기</a>
         </div>
         {% endif %}
 
@@ -58,16 +58,20 @@
         </div>
 
         {% for part in analysis_parts %}
-        <hr>
-        <h2>Part {{ loop.index }}: {{ part.title }}</h2>
         <div class="analysis-section">
+            <h2>Part {{ loop.index }}: {{ part.title }}</h2>
             {% for section in part.sections %}
-            <h3>{{ section.title }}</h3>
-            {% for paragraph in section.content %}
-            <div class="content">{{ paragraph.text | format_content | safe }}</div>
-            {% endfor %}
+            <div class="section-content">
+                <h3>{{ section.title }}</h3>
+                {% for paragraph in section.content %}
+                <div class="content">{{ paragraph.text | format_content | safe }}</div>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
+        {% if not loop.last %}
+        <hr>
+        {% endif %}
         {% endfor %}
     </div>
 </body>

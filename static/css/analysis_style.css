@@ -24,26 +24,33 @@ h1 {
     margin-bottom: 15px;
 }
 h2 {
-    border-bottom: 2px solid #9A7AA0;
+    border-bottom: 1px solid #9A7AA0;
     font-size: 1.5em;
-    margin-top: 40px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
 }
 h3 {
     border-bottom: 1px solid #C8A8D8;
     font-size: 1.2em;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
     color: #5A4B7C;
 }
 p, .content {
     font-size: 16px;
-    white-space: pre-line;
-    margin-bottom: 1em;
+    line-height: 1.8;
+    margin-bottom: 1.2em;
+    text-align: justify;
+    word-break: keep-all;
+    word-wrap: break-word;
 }
 hr {
     border: 0;
-    height: 2px;
-    background-color: #e9ecef;
-    margin: 50px 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #C8A8D8, transparent);
+    margin: 40px 0;
 }
 .info-box {
     background-color: #f8f9fa;
@@ -144,118 +151,65 @@ hr {
     font-style: italic;
 }
 
-/* 모바일 반응형 스타일 */
-@media (max-width: 768px) {
-    body {
-        margin: 10px auto;
-        padding: 0 15px;
-        font-size: 14px;
-    }
-    
-    .report-container {
-        padding: 20px 15px;
-        border-radius: 6px;
-    }
-    
-    h1 {
-        font-size: 1.6em;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-    }
-    
-    h2 {
-        font-size: 1.3em;
-        margin-top: 30px;
-        padding-bottom: 8px;
-    }
-    
-    h3 {
-        font-size: 1.1em;
-        margin-top: 20px;
-        padding-bottom: 6px;
-    }
-    
-    p, .content {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 0.8em;
-    }
-    
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .info-box {
-        padding: 15px;
-        margin-top: 15px;
-    }
-    
-    .toc-box {
-        padding: 15px;
-        margin-top: 15px;
-    }
-    
-    .toc-box .toc-item {
-        font-size: 1em;
-        margin-bottom: 6px;
-    }
-    
-    .toc-box .toc-sub-item {
-        margin-left: 15px;
-        margin-bottom: 3px;
-        font-size: 0.9em;
-    }
-    
-    .btn {
-        display: block;
-        width: 100%;
-        margin: 5px 0;
-        padding: 12px 18px;
-        font-size: 16px;
-    }
-    
-    .report-controls {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-    }
-    
-    hr {
-        margin: 30px 0;
-    }
-    
-    .error-section {
-        padding: 15px;
-        margin: 10px 0;
-    }
+/* 분석 섹션 개선 */
+.analysis-section {
+    margin-bottom: 30px;
 }
 
-/* 작은 모바일 화면 (320px 이하) */
-@media (max-width: 320px) {
-    body {
-        padding: 0 10px;
-        font-size: 13px;
-    }
-    
-    .report-container {
-        padding: 15px 10px;
-    }
-    
-    h1 {
-        font-size: 1.4em;
-    }
-    
-    h2 {
-        font-size: 1.2em;
-    }
-    
-    h3 {
-        font-size: 1em;
-    }
-    
-    p, .content {
-        font-size: 13px;
-    }
+.analysis-section h3:first-child {
+    margin-top: 0;
+}
+
+/* 문단 간격 조정 */
+.analysis-section .content {
+    margin-bottom: 1.5em;
+}
+
+.analysis-section .content:last-child {
+    margin-bottom: 0;
+}
+
+/* 자연스러운 텍스트 흐름 */
+.analysis-section p {
+    text-indent: 0;
+    margin-bottom: 1.2em;
+}
+
+/* 강조 텍스트 스타일 */
+.analysis-section strong {
+    color: #5A4B7C;
+    font-weight: 600;
+}
+
+/* 인용구 스타일 */
+.analysis-section blockquote {
+    border-left: 3px solid #C8A8D8;
+    padding-left: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #666;
+}
+
+/* 섹션 콘텐츠 개선 */
+.section-content {
+    margin-bottom: 25px;
+}
+
+.section-content:last-child {
+    margin-bottom: 0;
+}
+
+.section-content h3 {
+    margin-bottom: 12px;
+}
+
+/* 문단 간격 최적화 */
+.section-content .content {
+    margin-bottom: 1.3em;
+}
+
+.section-content .content:last-child {
+    margin-bottom: 0;
 }
 
 /* 모바일 반응형 스타일 */
@@ -291,8 +245,9 @@ hr {
     
     p, .content {
         font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 0.8em;
+        line-height: 1.7;
+        margin-bottom: 1em;
+        text-align: left;
     }
     
     .info-grid {
