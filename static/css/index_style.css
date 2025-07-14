@@ -141,11 +141,61 @@ button:hover {
     min-width: 80px;
 }
 
-@media (max-width: 480px) {
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        min-height: 100vh;
+    }
+    
+    .container {
+        padding: 25px 20px;
+        border-radius: 15px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    input[type="date"],
+    input[type="time"],
+    input[type="text"],
+    select {
+        padding: 14px 12px;
+        font-size: 16px; /* iOS 줌 방지 */
+        border-radius: 6px;
+    }
+    
+    .radio-group, .checkbox-group {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .radio-group label, .checkbox-group label {
+        font-size: 0.9rem;
+    }
+    
     .time-wrapper {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        align-items: stretch;
+        gap: 12px;
     }
     
     .time-wrapper input[type="time"] {
@@ -154,7 +204,133 @@ button:hover {
     }
     
     .time-wrapper .checkbox-group {
+        justify-content: flex-start;
         min-width: unset;
+    }
+    
+    button {
+        padding: 16px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+    
+    .button-group {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .email-section {
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+    
+    .email-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .email-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .format-selector {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .format-label {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .format-icon {
+        font-size: 1.5rem;
+    }
+    
+    .format-title {
+        font-size: 0.95rem;
+    }
+    
+    .format-desc {
+        font-size: 0.8rem;
+    }
+    
+    #email_input {
+        padding: 14px 12px;
+        font-size: 16px; /* iOS 줌 방지 */
+    }
+    
+    .privacy-section {
+        margin-top: 25px;
+        padding-top: 15px;
+    }
+    
+    .privacy-content {
+        max-height: 100px;
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+    
+    .privacy-agree {
+        gap: 8px;
+    }
+    
+    .privacy-agree label {
+        font-size: 0.85rem;
+    }
+    
+    .privacy-links {
+        margin-top: 12px;
+    }
+    
+    .privacy-link {
+        font-size: 0.85rem;
+        padding: 10px 14px;
+    }
+    
+    .footer-text {
+        font-size: 0.75rem;
+        margin-top: 15px;
+    }
+}
+
+/* 작은 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    input[type="date"],
+    input[type="time"],
+    input[type="text"],
+    select {
+        padding: 12px 10px;
+    }
+    
+    .email-section {
+        padding: 15px;
+    }
+    
+    .format-selector {
+        gap: 10px;
+    }
+    
+    .format-label {
+        padding: 10px;
     }
 }
 
@@ -402,15 +578,17 @@ button:hover {
 
 .adblock-modal-content {
     background-color: #fff;
-    margin: 10% auto;
-    padding: 30px;
+    margin: 5% auto;
+    padding: 25px 20px;
     border-radius: 15px;
-    width: 90%;
+    width: 95%;
     max-width: 500px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: modalSlideIn 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes modalSlideIn {

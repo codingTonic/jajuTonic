@@ -238,15 +238,17 @@ hr {
 
 .adblock-modal-content {
     background-color: #fff;
-    margin: 10% auto;
-    padding: 30px;
+    margin: 5% auto;
+    padding: 25px 20px;
     border-radius: 15px;
-    width: 90%;
+    width: 95%;
     max-width: 500px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: modalSlideIn 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes modalSlideIn {
@@ -347,39 +349,49 @@ hr {
 /* 모바일 반응형 스타일 */
 @media (max-width: 768px) {
     body {
-        margin: 10px auto;
-        padding: 0 15px;
-        font-size: 14px;
+        margin: 5px auto;
+        padding: 0 10px;
+        font-size: 15px; /* iOS 줌 방지를 위해 14px에서 15px로 증가 */
+        line-height: 1.6;
     }
     
     .report-container {
         padding: 20px 15px;
-        border-radius: 6px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     h1 {
-        font-size: 1.6em;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
+        font-size: 1.7em;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        text-align: center;
+        word-break: keep-all;
     }
     
     h2 {
-        font-size: 1.3em;
-        margin-top: 30px;
+        font-size: 1.4em;
+        margin-top: 25px;
+        margin-bottom: 15px;
         padding-bottom: 8px;
+        word-break: keep-all;
     }
     
     h3 {
-        font-size: 1.1em;
-        margin-top: 20px;
+        font-size: 1.2em;
+        margin-top: 18px;
+        margin-bottom: 12px;
         padding-bottom: 6px;
+        word-break: keep-all;
     }
     
     p, .content {
-        font-size: 14px;
+        font-size: 15px; /* iOS 줌 방지 */
         line-height: 1.7;
-        margin-bottom: 1em;
+        margin-bottom: 1.2em;
         text-align: left;
+        word-break: keep-all;
+        word-wrap: break-word;
     }
     
     .info-grid {
@@ -390,44 +402,85 @@ hr {
     .info-box {
         padding: 15px;
         margin-top: 15px;
+        border-radius: 6px;
+    }
+    
+    .info-box h3 {
+        margin-top: 0;
+        font-size: 1.1em;
     }
     
     .toc-box {
-        padding: 15px;
+        padding: 18px 15px;
         margin-top: 15px;
+        border-radius: 6px;
     }
     
     .toc-box .toc-item {
-        font-size: 1em;
-        margin-bottom: 6px;
+        font-size: 1.05em;
+        margin-bottom: 8px;
+        line-height: 1.4;
     }
     
     .toc-box .toc-sub-item {
         margin-left: 15px;
-        margin-bottom: 3px;
-        font-size: 0.9em;
+        margin-bottom: 5px;
+        font-size: 0.95em;
+        line-height: 1.4;
     }
     
     .btn {
         display: block;
         width: 100%;
-        margin: 5px 0;
-        padding: 12px 18px;
-        font-size: 16px;
+        margin: 8px 0;
+        padding: 14px 18px;
+        font-size: 16px; /* iOS 줌 방지 */
+        border-radius: 8px;
+        text-align: center;
+        box-sizing: border-box;
     }
     
     .report-controls {
         margin-bottom: 20px;
         padding-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
     
     hr {
-        margin: 30px 0;
+        margin: 25px 0;
     }
     
     .error-section {
         padding: 15px;
-        margin: 10px 0;
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+    
+    .analysis-section {
+        margin-bottom: 25px;
+    }
+    
+    .section-content {
+        margin-bottom: 20px;
+    }
+    
+    .ad-section {
+        margin-top: 30px;
+        padding: 15px;
+        border-radius: 6px;
+    }
+    
+    .ad-section h3 {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+    }
+    
+    /* 광고 컨테이너 모바일 최적화 */
+    .ad-container {
+        min-height: 100px;
+        overflow-x: auto;
     }
 }
 

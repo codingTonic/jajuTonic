@@ -264,4 +264,180 @@ h1 {
 .loading-steps li.completed::before {
     content: "✅";
     animation: none;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 15px; /* iOS 줌 방지 */
+    }
+    
+    .container {
+        padding: 25px 20px;
+        border-radius: 15px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        word-break: keep-all;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .result-grid dt {
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    
+    .result-grid dd {
+        margin-bottom: 12px;
+        padding-left: 10px;
+        border-left: 3px solid #C8A8D8;
+    }
+    
+    .analysis-section {
+        padding: 25px 20px;
+        margin: 20px 0;
+        border-radius: 15px;
+    }
+    
+    .analysis-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .analysis-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .analysis-features {
+        padding: 20px 15px;
+        margin: 20px 0;
+        border-radius: 12px;
+    }
+    
+    .analysis-features h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .feature-list li {
+        padding: 10px 0;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-icon {
+        font-size: 1.3rem;
+    }
+    
+    .feature-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .button-container {
+        gap: 12px;
+    }
+    
+    .btn {
+        padding: 16px 25px;
+        font-size: 1.1rem;
+        min-width: auto;
+        width: 100%;
+        border-radius: 12px;
+    }
+    
+    .loading-content {
+        padding: 30px 20px;
+        border-radius: 15px;
+        max-width: 350px;
+        margin: 0 20px;
+    }
+    
+    .loading-message {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .loading-detail {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .loading-steps {
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+    
+    .loading-steps li {
+        margin: 6px 0;
+        padding-left: 30px;
+        line-height: 1.4;
+    }
+}
+
+/* 작은 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .result-grid {
+        font-size: 1rem;
+        gap: 10px;
+    }
+    
+    .analysis-section {
+        padding: 20px 15px;
+    }
+    
+    .analysis-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .analysis-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .analysis-features {
+        padding: 15px 12px;
+    }
+    
+    .feature-text {
+        font-size: 0.85rem;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .loading-content {
+        padding: 25px 15px;
+        max-width: 300px;
+    }
+    
+    .loading-message {
+        font-size: 1.2rem;
+    }
+    
+    .loading-detail {
+        font-size: 0.9rem;
+    }
 } 
